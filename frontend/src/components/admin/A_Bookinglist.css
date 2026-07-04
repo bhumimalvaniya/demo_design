@@ -1,0 +1,161 @@
+
+
+.table-wrapper{
+    /* width: calc(100% - 220px); */
+    overflow-x: auto;
+    overflow-y: hidden; 
+    padding: 15px;
+    scrollbar-width:thin;
+    margin-left: 220px;
+}
+
+
+
+.booking-table-container{
+    margin-top: 30px;
+    border-collapse: collapse;
+    background: white;
+    width: 100%;
+     min-width: 600px;
+}
+
+
+/* .status-dropdown {
+  padding: 6px 14px;
+  border: none;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: bold;
+  outline: none;
+  cursor: pointer;
+  text-transform: uppercase;
+  min-width: 130px;
+}
+ */
+/* Different Colors */
+
+/*.status-dropdown.unconfirmed {
+  background: #fff3cd;
+  color: #ff9800;
+}
+
+.status-dropdown.confirmed {
+  background: #d4edda;
+  color: #28a745;
+}
+
+.status-dropdown.cancelled {
+  background: #f8d7da;
+  color: #dc3545;
+}
+
+.status-dropdown.processing {
+  background: #f3d9ff;
+  color: #a020f0;
+}
+
+.status-dropdown.expired {
+  background: #e2e3e5;
+  color: #6c757d;
+}
+
+.status-dropdown.pending {
+  background: #fff0d6;
+  color: #ff9800;
+}
+
+.status-dropdown.approved {
+  background: #d1ecf1;
+  color: #007bff;
+}
+.status-dropdown:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.expired-row {
+  opacity: 0.5;
+  background: #f1f1f1;
+  cursor: not-allowed;
+}*/
+
+.booking-table-container  thead{
+  background: black;
+  color: white;
+}
+
+.booking-table-container thead th td{
+   padding: 12px;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+}
+/*responsive tablet */
+@media(max-width:1024px){
+
+
+  .table-wrapper{
+        padding: 15px;
+        margin-left: 220px;
+    }
+  th, td {
+    padding: 10px;
+    font-size: 14px;
+  }
+    .booking-table-container{
+        width: 60%;
+    }
+
+    /*.pagination-container,
+    .page-info{
+        width: 100%;
+        margin-left: 0;
+    }*/
+
+    
+}
+
+@media(max-width:768px)
+{
+  .table-wrapper{
+     margin-left: 0;
+    padding: 10px;
+  }
+
+    .booking-table-container{
+      font-size: 15px;
+    }
+
+    .booking-table-container th,
+    .booking-table-container td{
+        padding: 10px 8px;
+        font-size: 12px;
+    }
+
+    .status-dropdown{
+        min-width: 110px;
+        font-size: 11px;
+        padding: 6px 10px;
+    }
+}
+
+@media (max-width: 480px) {
+
+  .booking-table-container{
+        min-width: 1200px;
+    }
+
+    .booking-table-container th,
+    .booking-table-container td{
+        padding: 10px;
+        font-size: 12px;
+    }
+
+    .status-dropdown{
+        min-width: 100px;
+        font-size: 10px;
+    }
+
+
+ 
+
+}

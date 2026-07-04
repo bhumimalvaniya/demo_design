@@ -1,0 +1,316 @@
+.cntpage{
+    width: 100%;
+    height: 500px;
+
+    background:
+    linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)),
+    url("E:\gtu\React\react js\react js\demo_design\frontend\src\components\images\3.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+    overflow: hidden;
+}
+
+/* OPTIONAL DARK GLASS EFFECT */
+
+.contact{
+    width: 100%;
+    height: 100%;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+    color: white;
+
+    background: rgba(0,0,0,0.25);
+    backdrop-filter: blur(2px);
+
+    animation: fadeIn 1s ease;
+}
+
+/* ================= SMALL TITLE ================= */
+
+.cnt1{
+    font-size: 18px;
+    letter-spacing: 5px;
+    color: #ff4d6d;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+/* ================= MAIN HEADINGS ================= */
+
+.contact h1{
+    font-size: 80px;
+    font-weight: 900;
+    margin: 0;
+    line-height: 1.1;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+}
+
+.contact h1:first-of-type{
+    color: #ffd166 !important;
+    text-shadow: 0 5px 15px rgba(0,0,0,0.4);
+}
+
+.contact h1:last-of-type{
+    color: white;
+    text-shadow: 0 5px 15px rgba(0,0,0,0.4);
+}
+
+/* ================= BREADCRUMB ================= */
+
+.contact h4{
+    margin-top: 25px;
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: 1px;
+}
+
+.contact h4 a{
+    color: white;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.contact h4 a:hover{
+    color: #ffd166;
+}
+
+/* ================= ANIMATION ================= */
+
+@keyframes fadeIn{
+    from{
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.form-container1 {
+   display: flex;
+  justify-content: center;
+  padding: 40px;
+}
+
+.form-box1 {
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  width: 350px;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.form-box1 .icon1 {
+  background: purple;
+  color: white;
+  display: inline-block;
+  padding: 10px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+
+.form-box1 h2 {
+  margin-bottom: 20px;
+}
+
+.form-box1 input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.form-box1 button {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  background: #2563eb;
+  color: white;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.form-box1 button:hover {
+  background: #1d4ed8;
+}
+
+/* ──  tablet ── */
+@media (max-width: 992px) {
+  .cntpage {
+    height: 350px;
+  }
+
+  .cntpage h1 {
+    font-size: 34px;
+  }
+
+  .cntpage .cnt1 {
+    font-size: 16px;
+  }
+
+  .form-container1 {
+    padding: 50px 30px;
+    min-height: 450px;
+  }
+
+  .form-box1 {
+    width: 85%;
+    padding: 35px;
+  }
+
+  .form-box1 h2 {
+    font-size: 22px;
+  }
+
+  .form-box1 input {
+    padding: 10px 12px;
+    font-size: 14px;
+  }
+
+  .form-box1 button {
+    padding: 12px;
+    font-size: 14px;
+  }
+
+  .form-box1 .icon1 {
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+  }
+}
+
+
+/* ── mobile 768px ── */
+@media (max-width: 768px) {
+  .cntpage{
+        height: 400px;
+        padding: 20px;
+    }
+
+    .contact h1{
+        font-size: 45px;
+        letter-spacing: 2px;
+    }
+
+    .cnt1{
+        font-size: 14px;
+        letter-spacing: 3px;
+    }
+
+    .contact h4{
+        font-size: 14px;
+    }
+
+  .form-container1 {
+    padding: 40px 20px;
+    min-height: 400px;
+  }
+
+  .form-box1 {
+    width: 90%;
+    padding: 28px;
+    border-radius: 10px;
+  }
+
+  .form-box1 h2 {
+    font-size: 20px;
+    margin-bottom: 18px;
+  }
+
+  .form-box1 input {
+    padding: 9px 11px;
+    font-size: 13px;
+    margin: 6px 0;
+  }
+
+  .form-box1 button {
+    padding: 11px;
+    font-size: 14px;
+  }
+
+  .form-box1 .icon1 {
+    width: 47px;
+    height: 47px;
+    font-size: 18px;
+    margin-bottom: 12px;
+  }
+}
+
+
+/* ── small mobile  480px ── */
+@media (max-width: 480px) {
+  .cntpage {
+    height: 260px;
+  }
+
+  .cntpage h1 {
+    font-size: 22px;
+  }
+
+  .cntpage .cnt1 {
+    font-size: 13px;
+    letter-spacing: 1px;
+  }
+
+  .cntpage h4 {
+    font-size: 12px;
+  }
+
+  .form-container1 {
+    padding: 30px 12px;
+    min-height: auto;
+  }
+
+  .form-box1 {
+    width: 100%;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+  }
+
+  .form-box1 .icon1 {
+    width: 42px;
+    height: 42px;
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+
+  .form-box1 h2 {
+    font-size: 18px;
+    margin-bottom: 14px;
+  }
+
+  .form-box1 input {
+    padding: 8px 10px;
+    font-size: 13px;
+    margin: 5px 0;
+    border-radius: 5px;
+  }
+
+  .form-box1 button {
+    padding: 10px;
+    font-size: 13px;
+    border-radius: 5px;
+    margin-top: 8px;
+  }
+}
+
+

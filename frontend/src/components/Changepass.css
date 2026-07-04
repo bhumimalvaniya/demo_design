@@ -1,0 +1,81 @@
+
+.change{
+    background-image: url("images\image.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 350px;
+    text-align: center;
+    font-family:Arial, Helvetica, sans-serif;
+}
+.change .chpass{
+     background: rgba(0, 0, 0, 0.6);
+     height: 350px;
+}
+.change a{
+  color: white;
+  text-decoration: none;
+}
+.change .ch1{
+    padding-top: 120px;
+    color: white;
+    
+}
+
+.yellow {
+  color: #f4b400;
+}
+
+.highlight {
+  font-weight: bold;
+}
+/* Form */
+.form-container {
+  display: flex;
+  justify-content: center;
+  margin: 80px;
+}
+
+.form-box {
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  width: 350px;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.form-box .icon {
+  background: purple;
+  color: white;
+  display: inline-block;
+  padding: 10px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+
+.form-box h2 {
+  margin-bottom: 20px;
+}
+
+.form-box input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.form-box button {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  background: #2563eb;
+  color: white;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.form-box button:hover {
+  background: #1d4ed8;
+}

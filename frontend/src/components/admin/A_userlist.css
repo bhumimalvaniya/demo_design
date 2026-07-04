@@ -1,0 +1,110 @@
+.table-container {
+  margin-left: 220px;
+  padding: 20px;
+  overflow-x: auto; /* allows horizontal scroll on small screens */
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  min-width: 600px; /* prevents table from shrinking too much */
+}
+
+thead {
+  background: black;
+  color: white;
+}
+
+th, td {
+  padding: 12px;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+}
+
+/* buttons */
+
+.block-btn, .unblock-btn {
+  border: none;
+  padding: 6px 12px;
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.block-btn {
+  background-color: #28a745;
+}
+
+.unblock-btn {
+  background-color: #dc3545;
+}
+
+/* fixed hover */
+.unblock-btn:hover {
+  background: darkred;
+}
+
+.block-btn:hover {
+  background: darkgreen;
+}
+
+/* ================= tablet ================= */
+
+@media (max-width: 992px) {
+
+  .table-container {
+    margin-left: 200px;
+    padding: 15px;
+  }
+
+  th, td {
+    padding: 10px;
+    font-size: 14px;
+  }
+
+}
+
+/* ================= mobile ================= */
+
+@media (max-width: 768px) {
+
+  .table-container {
+    margin-left: 0;
+    padding: 10px;
+  }
+
+  table {
+    font-size: 13px;
+  }
+
+  th, td {
+    padding: 8px;
+  }
+
+  .block-btn, .unblock-btn {
+    padding: 5px 8px;
+    font-size: 12px;
+  }
+
+}
+
+/* ================= small mobile ================= */
+
+@media (max-width: 480px) {
+
+  table {
+    font-size: 12px;
+  }
+
+  th, td {
+    padding: 6px;
+  }
+
+  .block-btn, .unblock-btn {
+    padding: 4px 6px;
+    font-size: 11px;
+  }
+
+}

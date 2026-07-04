@@ -1,0 +1,93 @@
+.table-container2 {
+  margin-left: 220px;
+  padding: 20px;
+  overflow-x: auto; /* scroll for small screens */
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  min-width: 600px;
+}
+
+thead {
+  background: black;
+  color: white;
+}
+
+th, td {
+  padding: 12px;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+}
+
+
+
+.dlt-btn{
+  padding: 6px 12px;
+  border-radius: 8px;
+  background-color: green;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+
+
+.dlt-btn:hover{
+  background: darkgreen;
+}
+
+/* ===== tablet ===== */
+
+@media (max-width: 992px) {
+
+  .table-container2 {
+    margin-left: 200px;
+  }
+
+  th, td {
+    padding: 10px;
+    font-size: 14px;
+  }
+
+}
+
+/* ===== mobile ===== */
+
+@media (max-width: 768px) {
+
+  .table-container2 {
+    margin-left: 0;
+    padding: 10px;
+  }
+
+  table {
+    font-size: 13px;
+  }
+
+  th, td {
+    padding: 8px;
+  }
+
+}
+
+/* ===== small mobile ===== */
+
+@media (max-width: 480px) {
+
+  table {
+    font-size: 12px;
+  }
+
+  th, td {
+    padding: 6px;
+  }
+
+  .dlt-btn{
+    padding: 4px 8px;
+    font-size: 12px;
+  }
+
+}

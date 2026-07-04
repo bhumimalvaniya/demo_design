@@ -1,0 +1,98 @@
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  
+}
+
+
+/* Form */
+.register {
+  display: flex;
+  min-height: 85vh;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+  background:  url("E:\gtu\React\react js\react js\demo_design\frontend\src\components\images\login.jpg") no-repeat center center / cover;
+}
+
+.form-box {
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  width: 350px;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.form-box .icon {
+  background: purple;
+  color: white;
+  display: inline-block;
+  padding: 10px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+.radio1{
+  display: flex;
+  text-align: center;
+  margin-right: 100px;
+
+}
+.remember {
+text-align: left;
+  font-size: 14px;
+  margin: 10px 0;
+  display: flex;
+ 
+}
+.form-box .remember input{
+  padding-right: 255px;
+  
+}
+
+.error {
+  color: red;
+  font-size: 12px;
+  margin-bottom: 8px;
+  display: block;
+}
+
+
+
+.form-box h2 {
+  margin-bottom: 20px;
+}
+
+.form-box input[type="text"]
+.form-box input[type="email"]
+.form-box input[type="password"]
+ {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.form-box button {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  background: #2563eb;
+  color: white;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.form-box button:hover {
+  background: #1d4ed8;
+}
+.form-box a{
+  text-decoration: none;
+  color:rgb(110, 109, 109);
+  text-align: left;
+}

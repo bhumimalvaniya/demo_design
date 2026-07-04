@@ -1,0 +1,135 @@
+
+.login-page {
+  background: url("E:\gtu\React\react js\react js\demo_design\frontend\src\components\images\image.png") no-repeat center center / cover;
+  background-color: rgba(0, 0, 0, 0.6);
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Arial, sans-serif;
+  padding: 16px;
+  box-sizing: border-box;
+}
+
+
+.login-box {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid #fff;
+  padding: 30px;
+  width: 100%;
+  max-width: 350px;
+  border-radius: 8px;
+  text-align: center;
+  color: #fff;
+  box-sizing: border-box;
+}
+
+
+.lock-icon {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+
+.login-box input[type="email"],
+.login-box input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 4px;
+  outline: none;
+  box-sizing: border-box;
+  font-size: 16px; /* Prevents iOS zoom on focus */
+}
+
+
+.rememberadmin {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-align: left;
+  margin: 10px 0;
+  font-size: 14px;
+  width: 100%;        
+}
+
+.rememberadmin input[type="checkbox"] {
+  margin: 0;          
+  width: 16px;       
+  height: 16px;
+  cursor: pointer;
+  
+}
+
+.rememberadmin label {
+  cursor: pointer;
+  color: #fff;
+  margin: 0;          
+  white-space: nowrap; 
+}
+
+.login-btn {
+  width: 100%;
+  padding: 10px;
+  background-color: #2a6df4;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  box-sizing: border-box;
+}
+
+.login-btn:hover {
+  background-color: #1b4ec3;
+}
+
+.err {
+  color: red;
+}
+
+/*  Responsive Breakpoints  */
+
+/* Tablet (992px) */
+@media (max-width: 992px) {
+  .login-box {
+    padding: 24px 20px;
+    max-width: 400px;
+  }
+}
+
+/* Mobile (768px) */
+@media (max-width: 768px) {
+  .login-page {
+    align-items: flex-start;
+    padding-top: 40px;
+  }
+
+  .login-box {
+    padding: 20px 16px;
+    border-radius: 6px;
+  }
+
+  .login-btn {
+    padding: 12px;
+    font-size: 15px;
+  }
+
+  .rememberadmin {
+    font-size: 13px;
+  }
+}
+
+/* Small phones (480px) */
+@media (max-width: 480px) {
+  .login-page {
+    padding: 24px 10px;
+  }
+
+  .login-box {
+    padding: 16px 12px;
+  }
+}

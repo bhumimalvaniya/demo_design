@@ -1,0 +1,209 @@
+/* outer container */
+.change-user-container {
+  min-height: 10vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0px;
+  background: #f9f9f9;
+ 
+}
+
+/* card box */
+.form-card {
+  background: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  width: 350px;
+  text-align: center;
+   margin-top: 50px;
+   margin-bottom: 50px;
+}
+
+/* lock icon */
+.form-icon {
+  width: 50px;
+  height: 50px;
+  background: #673ab7;
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto 10px;
+  font-size: 20px;
+}
+
+.form-card h2 {
+  margin-bottom: 20px;
+}
+
+/* form styles */
+form {
+  text-align: left;
+}
+
+form label {
+  display: block;
+  font-size: 14px;
+  margin-top: 10px;
+  margin-bottom: 3px;
+}
+
+form input {
+  width: 100%;
+  padding: 8px 10px;
+  margin-bottom: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* gender */
+.gender-options {
+  display: flex;
+  gap: 10px;
+  font-size: 14px;
+}
+
+/* remember me */
+.remember-me {
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+/* button */
+.change {
+  width: 100%;
+  padding: 10px;
+  margin-top: 15px;
+  background-color: #1e88e5;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.change:hover {
+  background-color: #1565c0;
+}
+
+.footer-text {
+  margin-top: 15px;
+  font-size: 12px;
+  color: #888;
+}
+
+/*  tablet responsive */
+
+
+@media (max-width: 992px) {
+  .change-user-container {
+    justify-content: center;
+  }
+
+  .form-card {
+    width: 80%;
+    margin-top: 90px;
+  }
+}
+
+
+/*  mobile responsive */
+
+
+@media (max-width: 768px) {
+  .change-user-container {
+    justify-content: center;
+    padding: 15px;
+  }
+
+  .form-card {
+    width: 100%;
+    padding: 20px;
+    margin-top: 70px;
+  }
+
+  .form-icon {
+    width: 45px;
+    height: 45px;
+    font-size: 18px;
+  }
+
+  form label {
+    font-size: 13px;
+  }
+
+  form input {
+    padding: 7px;
+  }
+
+  .change {
+    padding: 9px;
+    font-size: 14px;
+  }
+}
+
+/* ── Small Mobile  480px ── */
+@media (max-width: 480px) {
+  .change-user-container {
+    justify-content: center;
+    padding: 10px;
+    align-items: flex-start;
+  }
+
+  .form-card {
+    width: 100%;
+    padding: 18px;
+    margin-top: 60px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.08);
+  }
+
+  .form-icon {
+    width: 42px;
+    height: 42px;
+    font-size: 17px;
+    margin-bottom: 8px;
+  }
+
+  .form-card h2 {
+    font-size: 18px;
+    margin-bottom: 12px;
+  }
+
+  form label {
+    font-size: 12px;
+    margin-top: 8px;
+  }
+
+  form input {
+    padding: 6px 8px;
+    font-size: 13px;
+    border-radius: 4px;
+  }
+
+  .gender-options {
+    flex-direction: column;
+    gap: 5px;
+    font-size: 12px;
+  }
+
+  .remember-me {
+    font-size: 12px;
+    margin-top: 8px;
+  }
+
+  .change {
+    padding: 8px;
+    font-size: 13px;
+    margin-top: 12px;
+    border-radius: 4px;
+  }
+
+  .footer-text {
+    font-size: 11px;
+    margin-top: 10px;
+  }
+}

@@ -1,0 +1,218 @@
+
+
+.account-page {
+  background-color: #18163b; /* dark background */
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  padding-top:30px;
+  padding-bottom: 30px;
+}
+
+.account-container {
+  background-color: #2c2c7c; /* card color */
+  border-radius: 12px;
+  width: 400px;
+  padding: 20px;
+   min-height: 20vh;
+   margin-top: 0px;
+
+}
+
+.account-container h5{
+  color: white;
+  margin-bottom: 10px;
+}
+.account-container h5 i{
+  color: orangered;
+}
+
+.account-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.account-header .account-title {
+  font-size: 20px;
+   color: #1e90ff;
+   text-decoration: none;
+
+}
+
+.change-password {
+  color: #1e90ff;
+  cursor: pointer;
+   text-decoration: none;
+}
+
+.account-body{
+  color: white;
+}
+.account-body h3 {
+  text-align: left;
+}
+
+
+.account-body .profile-picture{
+  text-align: center;
+  margin-top: 30px;
+}
+
+.profile-picture{
+    position: relative;
+    width: 170px;
+    height: 170px;
+    margin: auto;
+}
+
+.profile-imgs{
+    width: 170px;
+    height: 170px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 6px solid white;
+    box-shadow: 0px 3px 10px rgba(0,0,0,0.2);
+}
+
+/* CAMERA BUTTON */
+
+.camera-btn{
+    position: absolute;
+    bottom: 8px;
+    right: 10px;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background: #0084ff;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border: 4px solid white;
+    font-size: 18px;
+}
+.account-info .info-item {
+  margin-top: 50px;
+  text-align: left;
+  justify-content: space-between;
+}
+
+
+
+.info-item {
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+  font-size: 16px;
+}
+
+.info-item i {
+  margin-right: 10px;
+  color: #ff9800;
+}
+
+.fa fa-edit{
+  margin-left: 100px;
+}
+
+.upload-text{
+  text-align: center;
+  color: white;
+  margin-top: 10px;
+  font-size: 14px;
+}
+/*  tablet */
+
+@media (max-width: 992px) {
+
+  .account-container {
+    width: 80%;
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+
+}
+
+
+/*  mobile */
+
+@media(max-width:768px){
+  .account-container{
+    margin: 40px;
+  }
+}
+
+@media (max-width: 480px) {
+
+  .account-page{
+    padding: 10px;
+  }
+  .account-container {
+    width: 100%;
+    padding: 15px;
+    margin-top: 10px;
+  }
+
+  .account-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .account-header .account-title {
+    font-size: 18px;
+  }
+
+    .profile-picture{
+    width: 100px;
+    height: 100px;
+    margin: auto;
+  }
+
+  .profile-imgs{
+    width: 100px;
+    height: 100px;
+    border: 4px solid white;
+  }
+
+  .camera-btn{
+    width: 32px;
+    height: 32px;
+    bottom: 2px;
+    right: 2px;
+    font-size: 14px;
+    border: 3px solid white;
+  }
+   .account-info{
+    margin-top: 20px;
+  }
+
+  .info-item{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    padding: 10px 0;
+    font-size: 14px;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+  }
+
+  .info-item span{
+    flex: 1;
+    font-size: 14px;
+    word-break: break-word;
+  }
+
+  .info-item i{
+    font-size: 16px;
+  }
+
+  .info-item a{
+    color: white;
+    text-decoration: none;
+  }
+
+
+}

@@ -1,0 +1,368 @@
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html,body{
+    width:100%;
+    overflow-x:hidden;
+    background:#fff;
+}
+.back-img{
+    width:100%;
+    height:420px;
+    background:
+    linear-gradient(rgba(0,0,0,0.55),rgba(0,0,0,0.55)),
+    url("https://images.unsplash.com/photo-1505236858219-8359eb29e329?q=80&w=2070&auto=format&fit=crop");
+    background-size:cover;
+    background-position:center;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    overflow: hidden;
+    position: relative;
+}
+.back-img::before{
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background:  rgba(255,255,255,0.03);
+    backdrop-filter: blur(1px);
+}
+
+@keyframes fadeIn{
+    from{
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hrmny{
+    color:white;
+    animation: fadeIn 1.2s ease;
+    z-index: 2;
+    position: relative;
+}
+
+.evnt{
+    font-size:18px;
+    letter-spacing:3px;
+    margin-bottom:10px;
+    color:#ffc107;
+}
+
+.hrmny h3{
+    font-size:60px;
+    margin-bottom:15px;
+    font-weight:bold;
+}
+
+.galary{
+    font-size:17px;
+}
+
+.galary a{
+    text-decoration:none;
+    color:white;
+}
+
+.hrmny h3{
+    color: #92970b;
+}
+.hrmny h4{
+    margin-top:15px;
+    font-size:35px;
+    color:red;
+    letter-spacing:2px;
+}
+
+/* ---------- SECTION TITLE ---------- */
+
+.des{
+    text-align:center;
+    margin:50px 0 30px;
+}
+
+.des p{
+    font-size:30px;
+    font-weight:bold;
+    color:#222;
+}
+
+/* ---------- GALLERY ---------- */
+
+.gallary-grid{
+    width:90%;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:25px;
+    padding-bottom:50px;
+}
+
+.gallary-card{
+    position:relative;
+    overflow:hidden;
+    border-radius:18px;
+    height:320px;
+    cursor:pointer;
+    box-shadow:0 10px 25px rgba(0,0,0,0.15);
+}
+
+.gallary-card img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:0.5s;
+}
+
+.gallary-card:hover img{
+    transform:scale(1.1);
+}
+
+/* ---------- OVERLAY ---------- */
+
+.overlay{
+    position:absolute;
+    inset:0;
+    background:linear-gradient(to top,
+    rgba(0,0,0,0.85),
+    rgba(0,0,0,0.1));
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-end;
+    padding:20px;
+    opacity:0;
+    transition:0.4s;
+}
+
+.gallary-card:hover .overlay{
+    opacity:1;
+}
+
+.text h3{
+    color:white;
+    font-size:24px;
+    margin-bottom:8px;
+}
+
+.text p{
+    color:#ddd;
+    font-size:15px;
+}
+
+.info{
+    width:38px;
+    height:38px;
+    border-radius:50%;
+    background:#ffc107;
+    color:black;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-weight:bold;
+    font-size:18px;
+}
+
+/* ---------- MAP ---------- */
+
+.map{
+    width:90%;
+    margin:30px auto 60px;
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:0 5px 20px rgba(0,0,0,0.15);
+}
+
+/* ---------- BANNER ---------- */
+
+.banner1{
+    width:90%;
+    margin:0 auto 80px;
+    padding:60px 30px;
+    border-radius:20px;
+    background:
+    linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),
+    url("https://images.unsplash.com/photo-1492684223066-81342ee5ff30?q=80&w=2070&auto=format&fit=crop");
+    background-size:cover;
+    background-position:center;
+    text-align:center;
+}
+
+.banner-text{
+    color:white;
+    font-size:40px;
+    margin-bottom:25px;
+    font-weight:bold;
+}
+
+.banner-button{
+    padding:14px 35px;
+    border:none;
+    border-radius:50px;
+    background:#ffc107;
+    color:black;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.banner-button:hover{
+    background:white;
+    transform:translateY(-3px);
+}
+
+/* ---------- TABLET ---------- */
+
+@media(max-width:992px){
+
+    .hrmny h3{
+        font-size:45px;
+    }
+
+    .banner-text{
+        font-size:32px;
+    }
+
+    .des p{
+        font-size:26px;
+    }
+}
+
+/* ---------- MOBILE ---------- */
+
+@media(max-width:768px){
+
+    .back-img{
+        height:300px;
+        padding:20px;
+    }
+
+    .hrmny h3{
+        font-size:32px;
+    }
+
+    .hrmny h4{
+        font-size:26px;
+    }
+
+    .evnt{
+        font-size:14px;
+    }
+
+    .galary{
+        font-size:14px;
+    }
+
+    .des p{
+        font-size:22px;
+    }
+
+    .gallary-grid{
+        width:95%;
+        gap:18px;
+    }
+
+    .gallary-card{
+        height:240px;
+    }
+
+    .text h3{
+        font-size:18px;
+    }
+
+    .text p{
+        font-size:13px;
+    }
+
+    .banner1{
+        padding:40px 20px;
+    }
+
+    .banner-text{
+        font-size:24px;
+        line-height:1.5;
+    }
+
+    .banner-button{
+        padding:12px 25px;
+        font-size:14px;
+    }
+}
+
+.gallery-img{
+  width:100%;
+  height:250px;
+  object-fit:cover;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.gallery-img:hover{
+  transform:scale(1.05);
+}
+
+
+/* Popup Background */
+
+.image-popup{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.8);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  z-index:9999;
+}
+
+
+/* Popup Box */
+
+.popup-box{
+  position:relative;
+  width:70%;
+  max-width:800px;
+}
+
+
+.popup-box img{
+  width:100%;
+  max-height:80vh;
+  object-fit:contain;
+  border-radius:10px;
+}
+
+
+/* Close Button */
+
+.close-btn{
+
+ position:absolute;
+ right:-15px;
+ top:-15px;
+
+ width:40px;
+ height:40px;
+
+ border:none;
+ border-radius:50%;
+
+ background:white;
+ color:black;
+
+ font-size:30px;
+ cursor:pointer;
+
+}

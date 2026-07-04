@@ -1,0 +1,136 @@
+.galary-page{
+  flex: 1; 
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: Arial, sans-serif;
+}
+
+.galary{
+   text-align: center;
+  padding:  10px;
+  border-radius: 6px;
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+
+.galary-form {
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  background: #fff;
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+
+.galary-form input {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  outline: none;
+  font-size: 14px;
+}
+
+.galary-form input:focus{
+  border-color: #1e90ff;
+  box-shadow: 0 0 3px #1e90ff33;
+}
+
+
+.file-upload2 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.file-upload2 input[type="file"] {
+  flex: 1;
+}
+
+.choose-pic2 {
+  background: #1e90ff;
+  color: white;
+  padding: 6px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.submit-btn2 {
+  background: #1e90ff;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 10px;
+  transition: background 0.3s ease;
+}
+
+.submit-btn2:hover {
+  background: #005dc1;
+}
+
+.table-container2 {
+  margin-left: 220px;
+  padding: 20px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+}
+
+thead {
+  background: black;
+  color: white;
+}
+
+th, td {
+  padding: 12px;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+}
+
+.edit-input{
+  width: 90%;
+  padding: 8px 10px;
+  border: 1px solid #999;
+  border-radius: 5px;
+  outline: none;
+  font-size: 15px;
+}
+
+
+.edit-input:focus{
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0,123,255,0.5);
+}
+
+
+.save-btn{
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 7px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+
+.save-btn:hover{
+  background-color: #218838;
+}
+
+table td{
+  text-align: center;
+  vertical-align: middle;
+  padding: 10px;
+}
