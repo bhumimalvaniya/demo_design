@@ -36,7 +36,12 @@ const MONGOURL=process.env.MONGOURL;
 mongoose.connect(MONGOURL)
     .then(()=>{
         console.log("database connected successfully");
-        app.listen(PORT,()=>{
+        //added
+        app.get("/", (req, res) => {
+  res.send("Backend API is running successfully 🚀");
+});
+        
+app.listen(PORT,()=>{
             console.log(`server is running on portion : ${PORT}`)
         })
     })
