@@ -405,7 +405,7 @@ export const getExpiredCategoryEvents = async (req, res) => {
 
     const now = new Date();
 
-    await updateEventStatus();
+    await updateEventStatus();  
 
     const events = await event.find({
       cate_nm: {
