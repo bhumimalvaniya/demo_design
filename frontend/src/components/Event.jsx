@@ -250,6 +250,13 @@ navigate(`/events/${encodeURIComponent(info.cate_nm.toLowerCase())}`);
     ))}
   </div>
 </div> */}
+
+<div className='upevent'>
+  <h1>
+    Upcoming Events
+  </h1>
+ 
+</div>
  <div className="upcoming">
         {upcomingEvents.length === 0 ? (
           <h2>No Events Found</h2>

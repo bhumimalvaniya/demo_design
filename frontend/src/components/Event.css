@@ -207,7 +207,11 @@
 /* ==========================
    Upcoming Section
 ========================== */
-
+.upevent{
+    margin-top: 50px;
+    margin-left: 140px;
+    position: relative;
+}
 .upcoming{
     width:100%;
     padding:60px 70px;
