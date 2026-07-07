@@ -15,7 +15,7 @@ const Details = () => {
   const [expiredEvents,setExpiredEvents] = useState([]);
 
    const loadScript = (src) => {
-    return Promise((resolve) => {
+    return new Promise((resolve) => {
       const script = document.createElement("script");
       script.src = src;
       script.onload = () => resolve(true);
@@ -97,6 +97,14 @@ const Details = () => {
     image:
       "https://res.cloudinary.com/dtdlad1ud/image/upload/v1707733051/uhwydfqry5wqwkaazbbk.jpg",
 
+       config: {
+    display: {
+      
+      language: "en"
+    }
+    
+  },
+  
     handler: async function (response) {
 
       console.log("Payment Success:", response);
