@@ -7,6 +7,7 @@
     padding: 15px;
     scrollbar-width:thin;
     margin-left: 220px;
+    font-size: 13px;
 }
 
 
@@ -91,8 +92,6 @@
 }
 /*responsive tablet */
 @media(max-width:1024px){
-
-
   .table-wrapper{
         padding: 15px;
         margin-left: 220px;

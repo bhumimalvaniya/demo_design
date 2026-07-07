@@ -164,7 +164,9 @@ const A_Bookinglist = () => {
             <th>Event Date</th>
             <th>Booking Date</th>
             <th>Location</th>
+            <th>Quentity</th>
             <th>Price</th>
+            <td>Total Price</td>
             {/* <th>Status</th> */}
             <th>Action</th>
 
@@ -203,9 +205,12 @@ const A_Bookinglist = () => {
                 </td>
 
                 <td>{booking.location}</td>
+               
+                <td>{booking.quantity}</td>
 
-                <td>{booking.price}</td>
-
+                <td> ₹ {booking.price}</td>
+ 
+                <td>  ₹ {booking.price*booking.quantity}</td>
              {/* <td>
 
                   <select
