@@ -312,7 +312,7 @@ navigate(`/events/${encodeURIComponent(info.cate_nm.toLowerCase())}`);
                   <button
                     onClick={() => navigate(`/details/${evnt._id}`)}
                   >
-                    Book Ticket
+                    View Detail
                   </button>
                 </div>
               </SwiperSlide>

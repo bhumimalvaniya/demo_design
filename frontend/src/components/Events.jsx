@@ -79,7 +79,7 @@
           <button
             onClick={() => navigate(`/details/${evnt._id}`)}
           >
-            Book Ticket
+            View Detail
           </button>
         </p>
 
