@@ -24,7 +24,8 @@ const Header = () => {
     
     const featchmenu=async()=>{
       try{
-          const res=await axios.get("http://localhost:5000/api/v1/admin/getmenu");
+          // const res=await axios.get("http://localhost:5000/api/v1/admin/getmenu");
+          const res=await axios.get("http://demo-design-backend.onrender.com/api/v1/admin/getmenu");
           console.log("Menu:",res.data);
           setMenus(res.data.menus);
       }
@@ -47,7 +48,8 @@ const Header = () => {
     try {
 
       const res = await axios.get(
-        `http://localhost:5000/api/v1/admin/search/${search}`
+        // `http://localhost:5000/api/v1/admin/search/${search}`
+        `http://demo-design-backend.onrender.com/api/v1/admin/search/${search}`
       );
 
       setSuggestions(res.data);
@@ -212,7 +214,8 @@ const Header = () => {
         ? user.avatar
         : user.avatar.startsWith("http")
         ? user.avatar
-        : `http://localhost:5000/uploads/${user.avatar}`
+        // : `http://localhost:5000/uploads/${user.avatar}`
+        : `http://demo-design-backend.onrender.com/uploads/${user.avatar}`
       : "https://cdn-icons-png.flaticon.com/512/149/149071.png"
   }
             width="60"
