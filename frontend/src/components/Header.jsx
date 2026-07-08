@@ -3,7 +3,7 @@ import "./Header.css";
 import DropDownProfile from "./DropDownProfile";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-
+import API_URL from "../config/api"; //use for replace the url
 
 const Header = () => {
 
@@ -11,7 +11,7 @@ const Header = () => {
   const profileRef = useRef(null);
   const [menuOpen, setMenuOpen] = useState(false);
   const[search,setSearch]=useState("");
-  const [user, setUser] = useState(null);   // FIXED
+  const [user, setUser] = useState(null);   // fixed
   const navigate=useNavigate();
 
   const[menus,setMenus]=useState([]);
@@ -25,7 +25,7 @@ const Header = () => {
     const featchmenu=async()=>{
       try{
           // const res=await axios.get("http://localhost:5000/api/v1/admin/getmenu");
-          const res=await axios.get("http://demo-design-backend.onrender.com/api/v1/admin/getmenu");
+          const res=await axios.get(`${API_URL}/api/v1/admin/getmenu`);
           console.log("Menu:",res.data);
           setMenus(res.data.menus);
       }
@@ -49,7 +49,7 @@ const Header = () => {
 
       const res = await axios.get(
         // `http://localhost:5000/api/v1/admin/search/${search}`
-        `http://demo-design-backend.onrender.com/api/v1/admin/search/${search}`
+        `${API_URL}/api/v1/admin/search/${search}`
       );
 
       setSuggestions(res.data);
@@ -215,7 +215,7 @@ const Header = () => {
         : user.avatar.startsWith("http")
         ? user.avatar
         // : `http://localhost:5000/uploads/${user.avatar}`
-        : `http://demo-design-backend.onrender.com/uploads/${user.avatar}`
+         : `${API_URL}/uploads/${user.avatar}`
       : "https://cdn-icons-png.flaticon.com/512/149/149071.png"
   }
             width="60"
