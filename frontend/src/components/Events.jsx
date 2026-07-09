@@ -3,6 +3,7 @@
     import { useNavigate } from 'react-router-dom'
     import { useParams } from 'react-router-dom'
     import axios from 'axios'
+    import API_URL from '../config/api'
         
     const Events = () => {
         const {categ}=useParams();
@@ -13,7 +14,8 @@
     const fetchEvents = async () => {
       try {
         const res = await axios.get(
-          `http://localhost:5000/api/v1/admin/search/${categ.toLowerCase()}`,
+         // `http://localhost:5000/api/v1/admin/search/${categ.toLowerCase()}`,
+          `${API_URL}/api/v1/admin/search/${categ.toLowerCase()}`,
         );
 
         console.log("Events Data:", res.data);
@@ -22,7 +24,8 @@
         const eventsWithFixedImages = res.data.map(event => ({
           ...event,
           image: event.image?.startsWith('/public/uploads/') 
-            ? `http://localhost:5000/uploads/${event.image.replace('/public/uploads/', '')}` 
+            //? `http://localhost:5000/uploads/${event.image.replace('/public/uploads/', '')}` 
+            ? `${API_URL}/uploads/${event.image.replace('/public/uploads/', '')}` 
             : event.image
         }));
 

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./Changedetail.css";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import API_URL from "../config/api";
 
 const Changedetail = () => {
 
@@ -20,7 +21,8 @@ useEffect(() => {
       const token = localStorage.getItem("token");
 
       const res = await axios.get(
-        "http://localhost:5000/api/v1/cust/getcurrentuser",
+        // "http://localhost:5000/api/v1/cust/getcurrentuser",
+         `${API_URL}/api/v1/cust/getcurrentuser`,
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -52,7 +54,8 @@ useEffect(() => {
     try {
       const token = localStorage.getItem("token");
       const res = await axios.put(
-        "http://localhost:5000/api/v1/cust/updateuser",
+       // "http://localhost:5000/api/v1/cust/updateuser",
+        `${API_URL}/api/v1/cust/updateuser`,
         {
         fnm,
         email,

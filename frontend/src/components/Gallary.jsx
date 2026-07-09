@@ -2,6 +2,7 @@ import React from "react";
 import './Gallary.css';
 import { useEffect,useState } from "react";
 import axios from "axios";
+import API_URL from "../config/api";
 
 
 const Gallary=()=>{
@@ -12,7 +13,8 @@ const Gallary=()=>{
     const fetchGallary = async () => {
       try {
         const res = await axios.get(
-          `http://localhost:5000/api/v1/gallary/featch`,
+         // `http://localhost:5000/api/v1/gallary/featch`,
+          `${API_URL}/api/v1/gallary/featch`,
         );
 
         console.log("Gallary Data:", res.data);
@@ -21,7 +23,8 @@ const Gallary=()=>{
         const GallaryWithFixedImages = res.data.map(gallary => ({
           ...gallary,
           image: gallary.image?.startsWith('/public/uploads/') 
-            ? `http://localhost:5000/uploads/${gallary.image.replace('/public/uploads/', '')}` 
+           // ? `http://localhost:5000/uploads/${gallary.image.replace('/public/uploads/', '')}` 
+           ? `${API_URL}/uploads/${gallary.image.replace('/public/uploads/', '')}` 
             : gallary.image
         }));
 
@@ -37,7 +40,8 @@ const Gallary=()=>{
 
   const handleDelete = async (id) =>{
                     try {
-            await axios.delete(`http://localhost:5000/api/v1/gallary/delete/${id}`);
+            //await axios.delete(`http://localhost:5000/api/v1/gallary/delete/${id}`);
+            await axios.delete(`${API_URL}/api/v1/gallary/delete/${id}`);
             setImages(images.filter(c => c._id !== id));
                     }
                     catch(error)

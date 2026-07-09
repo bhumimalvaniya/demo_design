@@ -1,6 +1,8 @@
 import React,{useEffect,useState} from 'react'
 import './About.css'
 import axios from "axios"
+import API_URL from '../config/api' //use for replace the url
+
 
 const About = () => {
 
@@ -12,7 +14,8 @@ const About = () => {
 
   const fetchAbout=async()=>{
     try{
-      const res=await axios.get("http://localhost:5000/api/v1/admin/getabout");
+      // const res=await axios.get("http://localhost:5000/api/v1/admin/getabout");
+       const res=await axios.get(`${API_URL}/api/v1/admin/getabout`);
       console.log(res.data);
       setAboutData(res.data);
 

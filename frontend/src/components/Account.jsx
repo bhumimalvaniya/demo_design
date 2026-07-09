@@ -3,6 +3,7 @@ import './Account.css'
 import { FaUser, FaEnvelope, FaVenusMars, FaPhone, FaEdit } from "react-icons/fa";
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import axios from "axios";
+import API_URL from "../config/api";//for replace the url
 
 const Account=()=>{
   const[user,setUser]=useState({});
@@ -34,7 +35,8 @@ const Account=()=>{
 
     // AUTO UPLOAD
     const res = await axios.put(
-      "http://localhost:5000/api/v1/cust/updateavatar",
+      // "http://localhost:5000/api/v1/cust/updateavatar",
+       `${API_URL}/api/v1/cust/updateavatar`,
       formData,
       {
         headers: {
@@ -92,7 +94,8 @@ const uploadAvatar = async () => {
     formData.append("avatar", avatar);
 
     const res = await axios.put(
-      "http://localhost:5000/api/v1/cust/updateavatar",
+      //"http://localhost:5000/api/v1/cust/updateavatar",
+      `${API_URL}/api/v1/cust/updateavatar`,
       formData,
       {
         headers: {
@@ -132,7 +135,8 @@ alert("Avatar updated!");
           } 
 
         const res = await axios.get(
-          "http://localhost:5000/api/v1/cust/getcurrentuser",
+          // "http://localhost:5000/api/v1/cust/getcurrentuser",
+           `${API_URL}/api/v1/cust/getcurrentuser`,
           {
             headers: {
               Authorization: `Bearer ${token}`,
@@ -175,7 +179,8 @@ alert("Avatar updated!");
         ? user.avatar
         : user.avatar.startsWith("http")
           ? user.avatar
-          : `http://localhost:5000/uploads/${user.avatar}`
+         // : `http://localhost:5000/uploads/${user.avatar}`
+          : `${API_URL}/uploads/${user.avatar}`
         : "https://cdn-icons-png.flaticon.com/512/149/149071.png"
     }
     alt="profile"

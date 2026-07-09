@@ -2,6 +2,7 @@ import React from 'react'
 import "./Contectus.css"
 import axios from 'axios';
 import { useState } from 'react';
+import API_URL from '../config/api';
 
 
 const Contactus = () => {
@@ -19,7 +20,8 @@ const Contactus = () => {
   const handleSubmit=async(e)=>{
     e.preventDefault();
     try{
-        const res=await axios.post("http://localhost:5000/api/v1/cont/contect",formData);
+       // const res=await axios.post("http://localhost:5000/api/v1/cont/contect",formData);
+        const res=await axios.post(`${API_URL}/api/v1/cont/contect`,formData);
         alert(res.data.message);
         setFormData({fullname:"",email:"",phone:"",message:""})
     }

@@ -1,6 +1,7 @@
 import React,{useEffect,useState} from "react";
 import axios from "axios";
 import "./Booking.css";
+import API_URL from "../config/api"; //for replace for url
 
 const Bookings = () => {
   const [booking,setBookings]=useState([]);
@@ -11,7 +12,8 @@ const Bookings = () => {
       
        const token = localStorage.getItem("token"); 
        console.log("Token:",token);
-    const res = await axios.get(`http://localhost:5000/api/v1/cust/getbook/:id`,
+   // const res = await axios.get(`http://localhost:5000/api/v1/cust/getbook/:id`,
+    const res = await axios.get(`${API_URL}/api/v1/cust/getbook/:id`,
         {
           headers: {
             Authorization: `Bearer ${token}`, 
@@ -61,7 +63,8 @@ const getCurrentTime = () => {
   console.log("Deleting ID:", id);
   try {
     const token = localStorage.getItem("token"); //  get token
-    await axios.delete(`http://localhost:5000/api/v1/cust/delete/${id}`, {
+    // await axios.delete(`http://localhost:5000/api/v1/cust/delete/${id}`, {
+     await axios.delete(`${API_URL}/api/v1/cust/delete/${id}`, {
       headers: {
         Authorization: `Bearer ${token}`, //  send token
       },

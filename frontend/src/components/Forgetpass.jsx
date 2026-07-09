@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import './Forgetpass.css';
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import API_URL from "../config/api";
 
 const Forgetpass = () => {
 
@@ -22,7 +23,8 @@ const Forgetpass = () => {
     }
 
    try {
-      await axios.post("http://localhost:5000/api/v1/cust/send-otp", { phone_no });
+      //await axios.post("http://localhost:5000/api/v1/cust/send-otp", { phone_no });
+      await axios.post(`${API_URL}/api/v1/cust/send-otp`, { phone_no });
       alert("OTP sent");
       setstep(2);
     } catch (err) {
@@ -33,7 +35,8 @@ const Forgetpass = () => {
    const verifyOtp = async () => {
   try {
     const res = await axios.post(
-      "http://localhost:5000/api/v1/cust/verify-otp",
+      //"http://localhost:5000/api/v1/cust/verify-otp",
+      `${API_URL}/api/v1/cust/verify-otp`,
       { phone_no, otp }
     );
 

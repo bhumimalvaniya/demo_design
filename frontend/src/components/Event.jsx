@@ -9,6 +9,7 @@ import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import API_URL from '../config/api';
 
 const Event = () => {
   const navigate=useNavigate();
@@ -23,7 +24,8 @@ const [filteredEvents, setFilteredEvents] = useState([]);
 
   const featchevents=async()=>{
     try{
-      const res=await axios.get("http://localhost:5000/api/v1/admin/featch");
+      //const res=await axios.get("http://localhost:5000/api/v1/admin/featch");
+      const res=await axios.get(`${API_URL}/api/v1/admin/featch`);
       console.log("FULL RESPONSE:", res.data);
       setDetail(res.data);
     }
@@ -38,7 +40,8 @@ const [filteredEvents, setFilteredEvents] = useState([]);
   const fetchUpcomingEvents = async () => {
     try {
       const res = await axios.get(
-        "http://localhost:5000/api/v1/admin/upcoming-events"
+        //"http://localhost:5000/api/v1/admin/upcoming-events"
+        `${API_URL}/api/v1/admin/upcoming-events`
       );
 
       setUpcomingEvents(res.data.events);
@@ -100,7 +103,8 @@ useEffect(() => {
       if (categ) {
 
         const res = await axios.get(
-          `http://localhost:5000/api/v1/admin/search/${categ}`
+          //`http://localhost:5000/api/v1/admin/search/${categ}`
+          `${API_URL}/api/v1/admin/search/${categ}`
         );
 
            console.log("SEARCH DATA:", res.data);
@@ -109,7 +113,8 @@ useEffect(() => {
       } else {
           
           const res = await axios.get(
-          "http://localhost:5000/api/v1/admin/featch"
+         // "http://localhost:5000/api/v1/admin/featch"
+          `${API_URL}/api/v1/admin/featch`
         );
 
         setFilteredEvents(res.data);
@@ -152,7 +157,8 @@ useEffect(() => {
               {
   info.image && (
     <img
-      src={`http://localhost:5000${info.image}`}
+     // src={`http://localhost:5000${info.image}`}
+      src={`${API_URL}${info.image}`}
       height="300px"
       width="100%"
       alt="category"
@@ -289,7 +295,8 @@ navigate(`/events/${encodeURIComponent(info.cate_nm.toLowerCase())}`);
                   <img
                   src={
   evnt.image?.startsWith("/public/uploads/")
-    ? `http://localhost:5000/uploads/${evnt.image.replace("/public/uploads/","")}`
+   // ? `http://localhost:5000/uploads/${evnt.image.replace("/public/uploads/","")}`
+   ? `${API_URL}/${evnt.image.replace("/public/uploads/","")}`
     : evnt.image
 }
                     alt={evnt.title}

@@ -4,6 +4,7 @@ import '@fortawesome/fontawesome-free/css/all.min.css'
 import { useNavigate, useParams } from 'react-router-dom'
 import { useEffect,useState } from 'react'
 import axios from 'axios'
+import API_URL from '../config/api'
 
 const Details = () => {
   const {id}=useParams();
@@ -112,7 +113,8 @@ const Details = () => {
       try {
 
         const res = await axios.post(
-          "http://localhost:5000/api/v1/cust/booking",
+          //"http://localhost:5000/api/v1/cust/booking",
+          `${API_URL}/api/v1/cust/booking`,
           { event_id ,quantity},
           {
             headers: {
@@ -152,7 +154,8 @@ const Details = () => {
 
   useEffect(()=>{
     axios
-        .get(`http://localhost:5000/api/v1/admin/details/${id}`)
+        //.get(`http://localhost:5000/api/v1/admin/details/${id}`)
+        .get(`${API_URL}/api/v1/admin/details/${id}`)
       .then((res) => {
         console.log("Event Details:", res.data);
         
@@ -160,7 +163,8 @@ const Details = () => {
         const eventWithFixedImage = {
           ...res.data,
           image: res.data.image?.startsWith('/public/uploads/') 
-            ? `http://localhost:5000/uploads/${res.data.image.replace('/public/uploads/', '')}` 
+           // ? `http://localhost:5000/uploads/${res.data.image.replace('/public/uploads/', '')}` 
+            ? `${API_URL}/uploads/${res.data.image.replace('/public/uploads/', '')}` 
             : res.data.image,
 
             //multiple images code 
@@ -204,13 +208,15 @@ useEffect(() => {
   const fetchExpiredEvents = async () => {
     try {
       const res = await axios.get(
-        `http://localhost:5000/api/v1/admin/expiredevents/${event.cate_nm}`
+        //`http://localhost:5000/api/v1/admin/expiredevents/${event.cate_nm}`
+        `${API_URL}/api/v1/admin/expiredevents/${event.cate_nm}`
       );
 
       const data = res.data.map((item) => ({
         ...item,
         image: item.image?.startsWith("/public/uploads/")
-          ? `http://localhost:5000/uploads/${item.image.replace(
+         // ? `http://localhost:5000/uploads/${item.image.replace(
+          ? `${API_URL}/uploads/${item.image.replace(
               "/public/uploads/",
               ""
             )}`
