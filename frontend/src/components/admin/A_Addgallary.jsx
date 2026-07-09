@@ -2,6 +2,7 @@
 import React,{useEffect, useState} from "react";
 import './A_Addgalary.css';
 import axios from 'axios';
+import API_URL from "../../config/api";
 
 
 const A_Addgalary=()=>{
@@ -44,7 +45,8 @@ const A_Addgalary=()=>{
        
 
         try{
-          const res=await axios.post("http://localhost:5000/api/v1/gallary/upload",formData,
+          // const res=await axios.post("http://localhost:5000/api/v1/gallary/upload",formData,
+           const res=await axios.post(`${API_URL}/api/v1/gallary/upload`,formData,
             {
             headers:{
               "Content-Type":"multipart/form-data",
@@ -66,7 +68,8 @@ const A_Addgalary=()=>{
       const[gallaries,setGallaries]=useState([]);
 
       const featchgallary=()=>{
-        axios.get('http://localhost:5000/api/v1/gallary/featch')
+        // axios.get('http://localhost:5000/api/v1/gallary/featch')
+        axios.get(`${API_URL}/api/v1/gallary/featch`)
                   .then(gallaries=>setGallaries(gallaries.data))
                   .catch(err=>console.log(err))
       }
@@ -84,7 +87,8 @@ const A_Addgalary=()=>{
 
       const handleDelete=async(id)=>{
         try{
-            await axios.delete(`http://localhost:5000/api/v1/gallary/delete/${id}`);
+            // await axios.delete(`http://localhost:5000/api/v1/gallary/delete/${id}`);
+             await axios.delete(`${API_URL}/api/v1/gallary/delete/${id}`);
             setGallaries(gallaries.filter(c=>c._id !== id));
         }
         catch(err)
@@ -109,7 +113,8 @@ const A_Addgalary=()=>{
         formdata.append("image",updateImage);
       }
 
-      const res=await axios.put(`http://localhost:5000/api/v1/gallary/updategallary/${id}`,formdata,
+      // const res=await axios.put(`http://localhost:5000/api/v1/gallary/updategallary/${id}`,formdata,
+       const res=await axios.put(`${API_URL}/api/v1/gallary/updategallary/${id}`,formdata,
         {
         headers:{
           "Content-Type":"multipart/form-data"
@@ -188,7 +193,8 @@ const A_Addgalary=()=>{
                                           onChange={(e)=>setUpdateImage(e.target.files[0])}
                                         />
                                       ):(
-                                        <img src={`http://localhost:5000${c.image.replace("/public", "")}`} width="50" alt="gallary"/>
+                                        // <img src={`http://localhost:5000${c.image.replace("/public", "")}`} width="50" alt="gallary"/>
+                                         <img src={`${API_URL}${c.image.replace("/public", "")}`} width="50" alt="gallary"/>
                                       )}
                                     </td>
                                       

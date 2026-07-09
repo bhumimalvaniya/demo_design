@@ -3,6 +3,7 @@ import './A_Personaldetail.css';
 import { useState } from "react";
 import { useEffect } from "react";
 import axios from "axios";
+import API_URL from "../../config/api";
 
 const A_Personaldetail=()=>{
 
@@ -20,7 +21,8 @@ const A_Personaldetail=()=>{
        console.log("token:",token);
 
       const res = await axios.get(
-        "http://localhost:5000/api/v1/admin/getadminprofile",
+        // "http://localhost:5000/api/v1/admin/getadminprofile",
+         `${API_URL}/api/v1/admin/getadminprofile`,
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -54,7 +56,8 @@ const A_Personaldetail=()=>{
    
     console.log("Sending:", { fullName, email });
     await axios.put(
-      "http://localhost:5000/api/v1/admin/updateadminprofile",
+     // "http://localhost:5000/api/v1/admin/updateadminprofile",
+      `${API_URL}/api/v1/admin/updateadminprofile`,
       {  name:fullName, email },
       {
         headers: {

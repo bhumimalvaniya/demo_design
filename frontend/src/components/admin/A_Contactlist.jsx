@@ -1,6 +1,7 @@
 import React, {useState,useEffect}from "react";
 import './A_Contactlist.css'
 import axios from "axios";
+import API_URL from "../../config/api";
 
 const A_Contactliist=()=>{
     const[cntus,setCntus]=useState([]);
@@ -8,7 +9,8 @@ const A_Contactliist=()=>{
     const itemsPerPage=5;
 
     useEffect(()=>{
-            axios.get('http://localhost:5000/api/v1/cont/featch')
+            // axios.get('http://localhost:5000/api/v1/cont/featch')
+             axios.get(`${API_URL}/api/v1/cont/featch`)
             .then(users=>setCntus(users.data))
             .catch(err=>console.log(err))
     },[])

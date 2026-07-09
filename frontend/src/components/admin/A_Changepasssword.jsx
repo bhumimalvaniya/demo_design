@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./A_Changepassword.css";
 import axios from "axios";
 import {useNavigate} from "react-router-dom";
+import API_URL from "../../config/api";
 
 const A_Changepassword = () => {
   const [password, setOldPassword] = useState("");
@@ -50,7 +51,8 @@ if (!validate()) return;
 
     try {
       const res = await axios.put(
-        "http://localhost:5000/api/v1/admin/changepassword",
+        // "http://localhost:5000/api/v1/admin/changepassword",
+         `${API_URL}/api/v1/admin/changepassword`,
         {
           password,
           newPassword,

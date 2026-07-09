@@ -3,6 +3,7 @@ import "./Adminlogin.css";
 import axios from "axios";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import API_URL from "../../config/api";
 
 const Adminlogin = () => {
 
@@ -40,7 +41,8 @@ const Adminlogin = () => {
     if (!validate()) return;
 
     try{
-      const res=await axios.post("http://localhost:5000/api/v1/admin/login",{email,password});
+      // const res=await axios.post("http://localhost:5000/api/v1/admin/login",{email,password});
+       const res=await axios.post(`${API_URL}/api/v1/admin/login`,{email,password});
       if(res.data.success===true)
       {
          sessionStorage.setItem("adminToken",res.data.token);

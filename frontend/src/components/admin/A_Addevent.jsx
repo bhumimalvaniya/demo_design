@@ -3,6 +3,7 @@
   import axios from "axios";
   import { useState } from "react";
   import { useNavigate } from "react-router-dom";
+import API_URL from "../../config/api";
 
   const A_Addevent=()=>{
 
@@ -54,7 +55,8 @@
       try {
 
         await axios.delete(
-          `http://localhost:5000/api/v1/admin/deleteevent/${id}`
+          // `http://localhost:5000/api/v1/admin/deleteevent/${id}`
+           `${API_URL}/api/v1/admin/deleteevent/${id}`
         );
 
         alert("Event Deleted");
@@ -73,7 +75,8 @@
       const fetchData = async () => {
     try {
       const res = await axios.get(
-        "http://localhost:5000/api/v1/admin/featchdata"
+        // "http://localhost:5000/api/v1/admin/featchdata"
+        `${API_URL}/api/v1/admin/featchdata`
       );
 
       setEvent(res.data);
@@ -84,7 +87,8 @@
   };
 
       useEffect(()=>{
-        axios.get("http://localhost:5000/api/v1/admin/featch")
+        // axios.get("http://localhost:5000/api/v1/admin/featch")
+         axios.get(`${API_URL}/api/v1/admin/featch`)
         .then((res)=>setCategories(res.data))
         .catch((err)=>console.log(err))
 
@@ -239,7 +243,8 @@
         }
 
       
-      const res= await axios.post("http://localhost:5000/api/v1/admin/addevent", formdata,
+      // const res= await axios.post("http://localhost:5000/api/v1/admin/addevent", formdata,
+       const res= await axios.post(`${API_URL}/api/v1/admin/addevent`, formdata,
           {
             headers:{
                 "Content-Type":"multipart/form-data",
@@ -317,7 +322,8 @@
         console.log(pair[0], pair[1]);
       }
 
-            const res=await axios.put(`http://localhost:5000/api/v1/admin/updateevent/${id}`,formdata,
+           // const res=await axios.put(`http://localhost:5000/api/v1/admin/updateevent/${id}`,formdata,
+            const res=await axios.put(`${API_URL}/api/v1/admin/updateevent/${id}`,formdata,
             {
               headers:{
                 "Content-Type":"multipart/form-data"
@@ -507,7 +513,8 @@
                             onChange={(e)=>setEditImage(e.target.files[0])}
                           />
                       ):(
-                        <img src={`http://localhost:5000${c.image.replace("/public", "")}`} alt="event" height={50} />
+                        // <img src={`http://localhost:5000${c.image.replace("/public", "")}`} alt="event" height={50} />
+                        <img src={`${API_URL}${c.image.replace("/public", "")}`} alt="event" height={50} />
                       )
                     }
                   </td>

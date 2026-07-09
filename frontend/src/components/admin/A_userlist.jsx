@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import './A_userlist.css';
 import axios from "axios";
+import API_URL from "../../config/api";
 
 const A_userlist=()=>{
     const[users,setUsers]=useState([]);
@@ -8,14 +9,17 @@ const A_userlist=()=>{
     const itemsPerPage=5;
 
     useEffect(()=>{
-            axios.get('http://localhost:5000/api/v1/cust/featch')
+            // axios.get('http://localhost:5000/api/v1/cust/featch')
+             axios.get(`${API_URL}/api/v1/cust/featch`)
             .then(users=>setUsers(users.data))
             .catch(err=>console.log(err))
     },[])
 
    const toggleUser = async (id) => {
-   await axios.put(`http://localhost:5000/api/v1/cust/toggle/${id}`);
-   const updated = await axios.get("http://localhost:5000/api/v1/cust/featch");
+  // await axios.put(`http://localhost:5000/api/v1/cust/toggle/${id}`);
+   await axios.put(`${API_URL}/api/v1/cust/toggle/${id}`);
+  //  const updated = await axios.get("http://localhost:5000/api/v1/cust/featch");
+    const updated = await axios.get(`${API_URL}/api/v1/cust/featch`);
   setUsers(updated.data);
 }
 

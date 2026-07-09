@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import './A_Addcategory.css';
 import axios from "axios";
+import API_URL from "../../config/api";
 
 const A_Addaboutus = () => {
 
@@ -36,7 +37,8 @@ const A_Addaboutus = () => {
       formData.append("description", description);
 
       const res = await axios.post(
-        "http://localhost:5000/api/v1/admin/addabout",
+       // "http://localhost:5000/api/v1/admin/addabout",
+        `${API_URL}/api/v1/admin/addabout`,
         {
             title,description
         }
@@ -65,7 +67,8 @@ const A_Addaboutus = () => {
     try {
 
       const res = await axios.get(
-        "http://localhost:5000/api/v1/admin/getabout"
+       // "http://localhost:5000/api/v1/admin/getabout"
+        `${API_URL}/api/v1/admin/getabout`
       );
 
       console.log(res.data);
@@ -99,7 +102,8 @@ const A_Addaboutus = () => {
     try {
 
      const res= await axios.delete(
-        `http://localhost:5000/api/v1/admin/deleteabout/${id}`
+        // `http://localhost:5000/api/v1/admin/deleteabout/${id}`
+         `${API_URL}/api/v1/admin/deleteabout/${id}`
       );
 
        console.log(res.data);
@@ -133,7 +137,8 @@ const A_Addaboutus = () => {
 
     const res = await axios.put(
 
-      `http://localhost:5000/api/v1/admin/updateabout/${id}`,
+      //`http://localhost:5000/api/v1/admin/updateabout/${id}`,
+      `${API_URL}/api/v1/admin/updateabout/${id}`,
 
       {
         title: editTitle,

@@ -3,6 +3,7 @@ import "./A_Addmenu.css";
 import { useState } from 'react';
 import { useEffect } from 'react';
 import axios from 'axios';
+import API_URL from '../../config/api';
 
 
 
@@ -43,7 +44,8 @@ const A_Addmenu = () => {
         // formdata.append("menulink",menulink);
 
          try{
-          const res=await axios.post("http://localhost:5000/api/v1/admin/addmenu",
+          // const res=await axios.post("http://localhost:5000/api/v1/admin/addmenu",
+           const res=await axios.post(`${API_URL}/api/v1/admin/addmenu`,
             {
             menuname: menuname,
             menulink:menulink
@@ -70,7 +72,8 @@ const A_Addmenu = () => {
     }
     const featchmenu=async()=>{
         try{
-                  const res=await axios.get("http://localhost:5000/api/v1/admin/getmenu");
+                  //const res=await axios.get("http://localhost:5000/api/v1/admin/getmenu");
+                  const res=await axios.get(`${API_URL}/api/v1/admin/getmenu`);
                     console.log(res.data.menus);
                   setMenus(res.data.menus);
         }
@@ -97,7 +100,8 @@ const A_Addmenu = () => {
 
     const handleDelete=async(id)=>{
         try{
-            await axios.delete(`http://localhost:5000/api/v1/admin/deletemenu/${id}`)
+            // await axios.delete(`http://localhost:5000/api/v1/admin/deletemenu/${id}`)
+            await axios.delete(`${API_URL}/api/v1/admin/deletemenu/${id}`)
             setMenus(menus.filter(c=>c._id !== id));
         }
         catch(error)
@@ -119,7 +123,8 @@ const A_Addmenu = () => {
       formdata.append("menuname",editMenuName);
       formdata.append("menulink",editMenuLink);
 
-      const res=await axios.put(`http://localhost:5000/api/v1/admin/updatemenu/${id}`,
+      //const res=await axios.put(`http://localhost:5000/api/v1/admin/updatemenu/${id}`,
+      const res=await axios.put(`${API_URL}/api/v1/admin/updatemenu/${id}`,
         {
             menuname:editMenuName,
             menulink:editMenuLink

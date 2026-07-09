@@ -3,6 +3,7 @@ import "./Dashbord.css";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import gallary from "../../../../backend/Model/GallarySchema";
+import API_URL from "../../config/api";
 
 export const Dashbord = () => {
   const navigate = useNavigate();
@@ -30,7 +31,8 @@ export const Dashbord = () => {
   const fetchStats = async () => {
     try {
       const res = await axios.get(
-        "http://localhost:5000/api/v1/admin/stats",
+        // "http://localhost:5000/api/v1/admin/stats",
+         `${API_URL}/api/v1/admin/stats`,
         {
           headers: {
             Authorization: `Bearer ${token}`,

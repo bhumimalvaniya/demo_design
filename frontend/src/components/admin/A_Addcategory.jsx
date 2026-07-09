@@ -2,6 +2,7 @@ import React from "react";
 import './A_Addcategory.css'
 import axios from "axios";
 import { useState,useEffect } from "react";
+import API_URL from "../../config/api";
 
 
 
@@ -45,7 +46,8 @@ const A_Addcategory=()=>{
         formData.append("cate_nm",cate_nm);
 
         try{
-          const res=await axios.post("http://localhost:5000/api/v1/admin/uplodcategory",formData,
+          // const res=await axios.post("http://localhost:5000/api/v1/admin/uplodcategory",formData,
+           const res=await axios.post(`${API_URL}/api/v1/admin/uplodcategory`,formData,
             {
               headers:{
                 "Content-Type":"multipart/form-data",
@@ -68,7 +70,8 @@ const A_Addcategory=()=>{
      const[categories,setCategories]=useState([]);
 
      const featchCategories=()=>{
-      axios.get('http://localhost:5000/api/v1/admin/featch')
+      //axios.get('http://localhost:5000/api/v1/admin/featch')
+      axios.get(`${API_URL}/api/v1/admin/featch`)
                 .then(categories=>setCategories(categories.data))
                 .catch(err=>console.log(err))
      }
@@ -84,7 +87,8 @@ const A_Addcategory=()=>{
         //delete data
           const handleDelete = async (id) =>{
             try {
-    await axios.delete(`http://localhost:5000/api/v1/admin/delete/${id}`);
+    // await axios.delete(`http://localhost:5000/api/v1/admin/delete/${id}`);
+     await axios.delete(`${API_URL}/api/v1/admin/delete/${id}`);
     setCategories(categories.filter(c => c._id !== id));
             }
             catch(error)
@@ -108,7 +112,8 @@ const A_Addcategory=()=>{
         formdata.append("image",editImage);
       }
 
-      const res=await axios.put(`http://localhost:5000/api/v1/admin/updatecate/${id}`,formdata,
+     // const res=await axios.put(`http://localhost:5000/api/v1/admin/updatecate/${id}`,formdata,
+      const res=await axios.put(`${API_URL}/api/v1/admin/updatecate/${id}`,formdata,
         {
         headers:{
           "Content-Type":"multipart/form-data"
@@ -181,7 +186,8 @@ const A_Addcategory=()=>{
                                           onChange={(e)=>setEditImage(e.target.files[0])}
                                         />
                                       ):(
-                                        <img src={`http://localhost:5000${c.image}`} width="50" alt="category"/>
+                                        // <img src={`http://localhost:5000${c.image}`} width="50" alt="category"/>
+                                        <img src={`${API_URL}${c.image}`} width="50" alt="category"/>
                                       )}
                                     </td>
                                       

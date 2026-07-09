@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import "./A_Bookinglist.css";
 import axios from 'axios';
+import API_URL from '../../config/api';
 
 const A_Bookinglist = () => {
 
@@ -18,7 +19,8 @@ const A_Bookinglist = () => {
         const token = localStorage.getItem("token");
 
         const res = await axios.get(
-          "http://localhost:5000/api/v1/cust/showallbook",
+          //"http://localhost:5000/api/v1/cust/showallbook",
+          `${API_URL}/api/v1/cust/showallbook`,
           {
             headers: {
               Authorization: `Bearer ${token}`,
@@ -42,7 +44,8 @@ const A_Bookinglist = () => {
 
               // Update in database
               await axios.put(
-                `http://localhost:5000/api/v1/cust/updatestatus/${item._id}`,
+               // `http://localhost:5000/api/v1/cust/updatestatus/${item._id}`,
+                `${API_URL}/api/v1/cust/updatestatus/${item._id}`,
                 { status: "expired" },
                 {
                   headers: {
@@ -93,7 +96,8 @@ const A_Bookinglist = () => {
       const token = localStorage.getItem("token");
 
       await axios.put(
-        `http://localhost:5000/api/v1/cust/updatestatus/${id}`,
+        // `http://localhost:5000/api/v1/cust/updatestatus/${id}`,
+         `${API_URL}/api/v1/cust/updatestatus/${id}`,
         { status: newStatus },
         {
           headers: {
@@ -125,7 +129,8 @@ const A_Bookinglist = () => {
       const token = localStorage.getItem("token");
 
       await axios.delete(
-        `http://localhost:5000/api/v1/cust/delete/${id}`,
+        // `http://localhost:5000/api/v1/cust/delete/${id}`,
+         `${API_URL}/api/v1/cust/delete/${id}`,
         {
           headers: {
             Authorization: `Bearer ${token}`,
