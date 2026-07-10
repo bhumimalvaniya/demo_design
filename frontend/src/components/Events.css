@@ -3,9 +3,10 @@ body{
     padding: 0;
 }
 
-.main{
+.mains{
     
-    background-image: url("E:\gtu\React\react js\react js\demo_design\frontend\src\components\images\eventspage.jpg");
+    /* background-image: url("E:\gtu\React\react js\react js\demo_design\frontend\src\components\images\eventspage.jpg"); */
+    background-image: url("/images/eventspage.jpg");
     background-repeat: no-repeat;
     height: 420px;
     background-position: center;
