@@ -43,7 +43,7 @@ const [filteredEvents, setFilteredEvents] = useState([]);
         //"http://localhost:5000/api/v1/admin/upcoming-events"
         `${API_URL}/api/v1/admin/upcoming-events`
       );
-
+      console.log(res.data.events);
       setUpcomingEvents(res.data.events);
     } catch (error) {
       console.log(error);
