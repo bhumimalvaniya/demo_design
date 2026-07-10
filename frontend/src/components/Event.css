@@ -319,8 +319,8 @@
 
 .swiper-button-prev,
 .swiper-button-next{
-    width:58px !important;
-    height:58px !important;
+    width:50px !important;
+    height:50px !important;
     background:#fff;
     border-radius:50%;
     box-shadow:0 8px 20px rgba(0,0,0,.18);
