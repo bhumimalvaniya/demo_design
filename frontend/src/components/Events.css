@@ -5,7 +5,8 @@ body{
 
 .main{
     
-    background-image: url("E:\gtu\React\react js\react js\demo_design\frontend\src\components\images\eventspage.jpg");
+    /* background-image: url("E:\gtu\React\react js\react js\demo_design\frontend\src\components\images\eventspage.jpg"); */
+    background-image: url("https://www.tlc-ltd.co.uk/wp-content/uploads/2016/11/Private-Parties-organisers-Decor-tlc-limited16.11.16.02.jpg");
     background-repeat: no-repeat;
     height: 420px;
     background-position: center;
