@@ -26,6 +26,10 @@ body{
 }
 .major{
     color:white;
+     position: relative;
+  z-index: 2;
+  color: white;
+  animation: fadeIn 1.2s ease;
 }
 
 .evntss{
