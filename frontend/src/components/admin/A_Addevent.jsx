@@ -514,8 +514,7 @@ import API_URL from "../../config/api";
                           />
                       ):(
                         // <img src={`http://localhost:5000${c.image.replace("/public", "")}`} alt="event" height={50} />
-                        // <img src={`${API_URL}${c.image.replace("/public", "")}`} alt="event" height={50} />
-                        <img src={c.image} alt="event" height={50} />
+                        <img src={`${API_URL}${c.image.replace("/public", "")}`} alt="event" height={50} />
                       )
                     }
                   </td>
