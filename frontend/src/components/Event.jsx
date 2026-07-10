@@ -292,7 +292,7 @@ navigate(`/events/${encodeURIComponent(info.cate_nm.toLowerCase())}`);
             {upcomingEvents.map((evnt) => (
               <SwiperSlide key={evnt._id}>
                 <div className="events-card">
-                  <img
+                  {/* <img
                   src={
   evnt.image?.startsWith("/public/uploads/")
    // ? `http://localhost:5000/uploads/${evnt.image.replace("/public/uploads/","")}`
@@ -304,7 +304,19 @@ navigate(`/events/${encodeURIComponent(info.cate_nm.toLowerCase())}`);
                       e.target.src =
                         "https://via.placeholder.com/500x300?text=No+Image";
                     }}
-                  />
+                  /> */}
+
+                  <img
+  src={
+    evnt.image?.startsWith("/public/uploads/")
+      ? `${API_URL}/uploads/${evnt.image.replace("/public/uploads/", "")}`
+      : `${API_URL}${evnt.image}`
+  }
+  alt={evnt.title}
+  onError={(e) => {
+    console.log("Failed Image URL:", e.target.src);
+  }}
+/>
 
                   <h1>{evnt.title}</h1>
                   
