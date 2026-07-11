@@ -29,6 +29,25 @@ export const addevent = async (req, res) => {
       (file) => `/public/uploads/${file.filename}`
     )
   : [];*/
+
+    if (!req.file) {
+      return res.status(400).json({
+        message: "Image is required",
+      });
+    }
+
+    //that code use for image upload in render when this is publish 
+    const cloudinaryResponse = await uploadOnCloudinary(req.file.path);
+
+      if (!cloudinaryResponse) {
+      return res.status(500).json({
+        message: "Image upload failed"
+      });
+    }
+
+      const image = cloudinaryResponse.secure_url;
+    
+
     if (
       !image || !title || !start_date || !end_date ||
       !start_time || !end_time || !price ||
@@ -50,16 +69,6 @@ export const addevent = async (req, res) => {
       });
     }
 
-    //that code use for image upload in render when this is publish 
-    const cloudinaryResponse = await uploadOnCloudinary(req.file.path);
-
-      if (!cloudinaryResponse) {
-      return res.status(500).json({
-        message: "Image upload failed"
-      });
-    }
-
-      const image = cloudinaryResponse.secure_url;
     
       //  same cate_nm allow multiple time
     const events = new event({
