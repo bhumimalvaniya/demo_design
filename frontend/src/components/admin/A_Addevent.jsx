@@ -338,6 +338,8 @@ import API_URL from "../../config/api";
       catch(error){
     console.log(error.response.data);
     console.log(error.response.status);
+    console.log("Updated Event:", res.data.data);
+console.log("Updated Image:", res.data.data.image);
     alert("update failed");
   }
     }
@@ -514,13 +516,19 @@ import API_URL from "../../config/api";
                           />
                       ):(
                         // <img src={`http://localhost:5000${c.image.replace("/public", "")}`} alt="event" height={50} />
-                        <img
-    src={
-        c.image.startsWith("http")
-            ? c.image
-            : `${API_URL}${c.image.replace("/public","")}`
-    }
-    alt={c.title}
+                       <img
+  src={
+    c.image && c.image.startsWith("https://res.cloudinary.com")
+      ? `${c.image}?v=${new Date().getTime()}`
+      : `${API_URL}${c.image.replace("/public", "")}?v=${new Date().getTime()}`
+  }
+  alt={c.title}
+  height={60}
+  width={80}
+  style={{ objectFit: "cover" }}
+  onError={(e) => {
+    console.log("Image failed:", e.target.src);
+  }}
 />
                       )
                     }
