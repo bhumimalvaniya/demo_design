@@ -134,6 +134,19 @@ useEffect(() => {
 
 }, [categ]);
   
+//helper function set to the image in the  render
+const getImageUrl = (image) => {
+  if (!image) return "";
+
+  if (
+    image.startsWith("http://") ||
+    image.startsWith("https://")
+  ) {
+    return image;
+  }
+
+  return `${API_URL}${image.replace("/public", "")}`;
+};
   return (
     <>
          <div className='mains'>
@@ -158,7 +171,8 @@ useEffect(() => {
   info.image && (
     <img
      // src={`http://localhost:5000${info.image}`}
-      src={`${API_URL}${info.image}`}
+      // src={`${API_URL}${info.image}`}
+     src={getImageUrl(info.image)} 
       height="300px"
       width="100%"
       alt="category"
@@ -306,7 +320,7 @@ navigate(`/events/${encodeURIComponent(info.cate_nm.toLowerCase())}`);
                     }}
                   /> */}
 
-                  <img
+                  {/* <img
   src={
     evnt.image?.startsWith("/public/uploads/")
       ? `${API_URL}/uploads/${evnt.image.replace("/public/uploads/", "")}`
@@ -316,8 +330,8 @@ navigate(`/events/${encodeURIComponent(info.cate_nm.toLowerCase())}`);
   onError={(e) => {
     console.log("Failed Image URL:", e.target.src);
   }}
-/>
-
+/> */}
+<img src={getImageUrl(evnt.image)} alt={evnt.title} />
                   <h1>{evnt.title}</h1>
                   
                   <p className="location">

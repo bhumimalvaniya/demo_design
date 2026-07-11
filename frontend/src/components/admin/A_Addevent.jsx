@@ -289,15 +289,19 @@ import API_URL from "../../config/api";
     }
 
     //helper function for image fetching on render
-    const getImageUrl = (image) => {
-       console.log("DB Image =", image);
+   const getImageUrl = (image) => {
+  console.log("DB Image =", image);
+
   if (!image) return "";
 
-  if (image.startsWith("http://")  || image.startsWith("https://")) {
+  if (image.startsWith("http://") || image.startsWith("https://")) {
+    console.log("Returned =", image);
     return image;
   }
 
-  return `${API_URL}${image.replace("/public", "")}`;
+  const url = `${API_URL}${image.replace("/public", "")}`;
+  console.log("Returned =", url);
+  return url;
 };
     
     const handleEdit=(item)=>{
@@ -539,12 +543,12 @@ console.log("Updated Image:", res.data.data.image);
   src={getImageUrl(c.image)}
   alt={c.title}
   onLoad={() => console.log("Loaded:", getImageUrl(c.image))}
-  onError={() => console.log("Failed:",e.target.src)}
+  onError={(e) => console.log("Failed:",e.target.src)}
 />
 
                       )
                     }
-                    <p>{getImageUrl(c.image)}</p>
+                  
                   </td>
                 {/* <td>
                   {

@@ -160,12 +160,12 @@ const Details = () => {
         console.log("Event Details:", res.data);
         
         // Fix image URL
-        const eventWithFixedImage = {
-          ...res.data,
-          image: res.data.image?.startsWith('/public/uploads/') 
-           // ? `http://localhost:5000/uploads/${res.data.image.replace('/public/uploads/', '')}` 
-            ? `${API_URL}/uploads/${res.data.image.replace('/public/uploads/', '')}` 
-            : res.data.image,
+        // const eventWithFixedImage = {
+        //   ...res.data,
+        //   image: res.data.image?.startsWith('/public/uploads/') 
+        //    // ? `http://localhost:5000/uploads/${res.data.image.replace('/public/uploads/', '')}` 
+        //     ? `${API_URL}/uploads/${res.data.image.replace('/public/uploads/', '')}` 
+        //     : res.data.image,
 
             //multiple images code 
           /*   galleryImages: res.data.galleryImages?.map((img) =>
@@ -173,9 +173,10 @@ const Details = () => {
       ? `http://localhost:5000/uploads/${img.replace("/public/uploads/", "")}`
       : img
   ) || []*/
-        };
+        // };
         
-        setEvents(eventWithFixedImage);
+        // setEvents(eventWithFixedImage);
+        setEvents(res.data);
         console.log("Event Details:", res.data);
 // console.log("Gallery Images:", res.data.galleryImages);
       })
@@ -212,21 +213,23 @@ useEffect(() => {
         `${API_URL}/api/v1/admin/expiredevents/${event.cate_nm}`
       );
 
-      const data = res.data.map((item) => ({
-        ...item,
-        image: item.image?.startsWith("/public/uploads/")
-         // ? `http://localhost:5000/uploads/${item.image.replace(
-          ? `${API_URL}/uploads/${item.image.replace(
-              "/public/uploads/",
-              ""
-            )}`
-          : item.image,
-      }));
+      // const data = res.data.map((item) => ({
+      //   ...item,
+      //   image: item.image?.startsWith("/public/uploads/")
+      //    // ? `http://localhost:5000/uploads/${item.image.replace(
+      //     ? `${API_URL}/uploads/${item.image.replace(
+      //         "/public/uploads/",
+      //         ""
+      //       )}`
+      //     : item.image,
+      // }));
 
-      setExpiredEvents(
-        data.filter((item) => item._id !== event._id)
-      );
-
+      // setExpiredEvents(
+      //   data.filter((item) => item._id !== event._id)
+      // );
+setExpiredEvents(
+  res.data.filter((item) => item._id !== event._id)
+);
     } catch (error) {
       console.log(error);
     }
@@ -239,16 +242,35 @@ useEffect(() => {
     return <h2>No events found</h2>;
   }
 
+//helper for use in featch the image in render
+const getImageUrl = (image) => {
+  if (!image) return "";
+
+  if (
+    image.startsWith("http://") ||
+    image.startsWith("https://")
+  ) {
+    return image;
+  }
+
+  return `${API_URL}${image.replace("/public", "")}`;
+};
   return (
     <>
      
        <div className="adet">
 
   {/* IMAGE */}
-  <img
+  {/* <img
     src={event.image}
     alt={event.title}
-  />
+  /> */}
+
+  <img
+  src={getImageUrl(event.image)}
+  alt={event.title}
+  onError={(e) => console.log("Failed:", e.target.src)}
+/>
 
   <div className="details-content">
 
@@ -394,8 +416,12 @@ useEffect(() => {
   ) : (
     expiredEvents.map((evnt) => (
       <div className="events-card expired-cards" key={evnt._id}>
-        <img src={evnt.image} alt={evnt.title} />
-
+        {/* <img src={evnt.image} alt={evnt.title} /> */}
+<img
+  src={getImageUrl(evnt.image)}
+  alt={evnt.title}
+  onError={(e) => console.log("Failed:", e.target.src)}
+/>
         {/* <h1>{evnt.title}</h1>
 
         <p>₹ {evnt.price}</p>
