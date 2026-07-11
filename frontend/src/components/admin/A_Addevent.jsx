@@ -280,6 +280,17 @@ import API_URL from "../../config/api";
         alert(`Error posting event: ${err.response?.data?.message || err.message}`);
       }
     }
+
+    //helper function for image fetching on render
+    const getImageUrl = (image) => {
+  if (!image) return "";
+
+  if (image.startsWith("http")) {
+    return image;
+  }
+
+  return `${API_URL}${image.replace("/public", "")}`;
+};
     
     const handleEdit=(item)=>{
         setEditId(item._id);
@@ -517,18 +528,8 @@ console.log("Updated Image:", res.data.data.image);
                       ):(
                         // <img src={`http://localhost:5000${c.image.replace("/public", "")}`} alt="event" height={50} />
                        <img
-  src={
-    c.image && c.image.startsWith("https://res.cloudinary.com")
-      ? `${c.image}?v=${new Date().getTime()}`
-      : `${API_URL}${c.image.replace("/public", "")}?v=${new Date().getTime()}`
-  }
-  alt={c.title}
-  height={60}
-  width={80}
-  style={{ objectFit: "cover" }}
-  onError={(e) => {
-    console.log("Image failed:", e.target.src);
-  }}
+    src={getImageUrl(c.image)}
+    alt={c.title}
 />
                       )
                     }
