@@ -16,7 +16,9 @@ export const addevent = async (req, res) => {
       description
     } = req.body;
 
-     const image = req.file ? `/public/uploads/${req.file.filename}` : null;
+    // (/* */) that comment of code use in the upload for image when website is not publish
+    /* const image = req.file ? `/public/uploads/${req.file.filename}` : null;*/
+
     //for multiple image and single image
   //   const image = req.file?.image
   // ? `/public/uploads/${req.files.image[0].filename}`
@@ -48,7 +50,18 @@ export const addevent = async (req, res) => {
       });
     }
 
-    //  same cate_nm allow multiple time
+    //that code use for image upload in render when this is publish 
+    const cloudinaryResponse = await uploadOnCloudinary(req.file.path);
+
+      if (!cloudinaryResponse) {
+      return res.status(500).json({
+        message: "Image upload failed"
+      });
+    }
+
+      const image = cloudinaryResponse.secure_url;
+    
+      //  same cate_nm allow multiple time
     const events = new event({
       image,
       // galleryImages, //multiple image
@@ -191,11 +204,23 @@ export const updateevent = async (req, res) => {
       cate_nm
     };
 
-    // if new image uploaded
-    if (req.file) {
+    // if new image uploaded in not publish
+     /*if (req.file) {
       updateData.image = `/public/uploads/${req.file.filename}`;
+    }*/
+
+      //file upload when uploaded image in render
+      if (req.file) {
+    const cloudinaryResponse = await uploadOnCloudinary(req.file.path);
+
+    if (!cloudinaryResponse) {
+        return res.status(500).json({
+            message: "Image upload failed"
+        });
     }
 
+    updateData.image = cloudinaryResponse.secure_url;
+}
     const updatedEvent = await event.findByIdAndUpdate(
       id,
       updateData,
