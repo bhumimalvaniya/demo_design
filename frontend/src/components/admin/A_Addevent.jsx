@@ -285,7 +285,7 @@ import API_URL from "../../config/api";
     const getImageUrl = (image) => {
   if (!image) return "";
 
-  if (image.startsWith("http")) {
+  if (image.startsWith("http://")  || image.startsWith("https://")) {
     return image;
   }
 
