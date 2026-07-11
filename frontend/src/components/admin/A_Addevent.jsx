@@ -79,6 +79,7 @@ import API_URL from "../../config/api";
         `${API_URL}/api/v1/admin/featchdata`
       );
 
+       console.log(res.data);
       setEvent(res.data);
 
     } catch (err) {
@@ -94,6 +95,12 @@ import API_URL from "../../config/api";
 
         fetchData();
       },[]);
+
+      useEffect(() => {
+    if(event.length){
+        console.log("FIRST IMAGE =",event[0].image);
+    }
+},[event]);
 
       //pagination logic
       const totalPages=Math.ceil(event.length/itemsPerPage);
@@ -283,13 +290,14 @@ import API_URL from "../../config/api";
 
     //helper function for image fetching on render
     const getImageUrl = (image) => {
+       console.log("DB Image =", image);
   if (!image) return "";
 
   if (image.startsWith("http://")  || image.startsWith("https://")) {
     return image;
   }
 
-  return `${image.replace("/public", "")}`;
+  return `${API_URL}${image.replace("/public", "")}`;
 };
     
     const handleEdit=(item)=>{
@@ -531,10 +539,12 @@ console.log("Updated Image:", res.data.data.image);
   src={getImageUrl(c.image)}
   alt={c.title}
   onLoad={() => console.log("Loaded:", getImageUrl(c.image))}
-  onError={() => console.log("Failed:", getImageUrl(c.image))}
+  onError={() => console.log("Failed:",e.target.src)}
 />
+
                       )
                     }
+                    <p>{getImageUrl(c.image)}</p>
                   </td>
                 {/* <td>
                   {
