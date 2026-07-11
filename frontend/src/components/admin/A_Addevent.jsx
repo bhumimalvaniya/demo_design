@@ -527,9 +527,11 @@ console.log("Updated Image:", res.data.data.image);
                           />
                       ):(
                         // <img src={`http://localhost:5000${c.image.replace("/public", "")}`} alt="event" height={50} />
-                       <img
-    src={getImageUrl(c.image)}
-    alt={c.title}
+                     <img
+  src={getImageUrl(c.image)}
+  alt={c.title}
+  onLoad={() => console.log("Loaded:", getImageUrl(c.image))}
+  onError={() => console.log("Failed:", getImageUrl(c.image))}
 />
                       )
                     }
