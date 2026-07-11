@@ -299,7 +299,7 @@ import API_URL from "../../config/api";
     return image;
   }
 
-  const url = `${API_URL}${image.replace("/public", "")}`;
+  const url = `${image.replace("/public", "")}`;
   console.log("Returned =", url);
   return url;
 };
