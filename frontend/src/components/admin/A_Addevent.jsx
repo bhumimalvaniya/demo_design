@@ -289,7 +289,7 @@ import API_URL from "../../config/api";
     return image;
   }
 
-  return `${API_URL}${image.replace("/public", "")}`;
+  return `${image.replace("/public", "")}`;
 };
     
     const handleEdit=(item)=>{
