@@ -333,7 +333,7 @@ export const updateAvatar = async (req, res) => {
 
       avatarUrl = cloudinaryRes.url;
     } 
-    // ✅ Case 2: file ન હોય → gender default
+    // ✅ Case 2: file is not available → gender default
     else {
       avatarUrl =
         userData.gender === "male"
