@@ -359,10 +359,13 @@ import API_URL from "../../config/api";
             
           }
       catch(error){
-    console.log(error.response.data);
-    console.log(error.response.status);
-    console.log("Updated Event:", res.data.data);
-console.log("Updated Image:", res.data.data.image);
+    console.log(error);
+    if(error.response)
+    {
+      console.log(error.response.data);
+       console.log(error.response.status);
+    }
+    
     alert("update failed");
   }
     }
