@@ -738,7 +738,7 @@ import API_URL from "../../config/api";
     opacity: currentPage === 1 ? 0.6 : 1
             }}
           >
-          <i class="fa fa-arrow-left" aria-hidden="true"></i>  Prev
+          <i className="fa fa-arrow-left" aria-hidden="true"></i>  Prev
           </button>
 
           {[...Array(totalPages)].map((_, i) => (
@@ -773,7 +773,7 @@ import API_URL from "../../config/api";
     opacity: currentPage === totalPages ? 0.6 : 1
             }}
           >
-            Next <i class="fa fa-arrow-right" aria-hidden="true"></i>
+            Next <i className="fa fa-arrow-right" aria-hidden="true"></i>
           </button>
         </div>
 
