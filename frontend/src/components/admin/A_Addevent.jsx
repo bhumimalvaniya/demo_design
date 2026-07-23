@@ -143,165 +143,74 @@ import API_URL from "../../config/api";
   return `${String(hours).padStart(2, "0")}:${minutes}`;
 };
       //add event
-    const handelsubmit = async (e) => {
-      e.preventDefault();
+   const handelsubmit = async (e) => {
+  e.preventDefault();
 
-      
-      if (!image) {
-        alert("Image is required");
-        return;
-      }
-      if (!image.type.startsWith("image/")) {
-        alert("Only image files are allowed");
-        return;
-      }
-    
-      if (!title.trim()) {
-        alert("Title is required");
-        return;
-      }
-      if (title.length < 3) {
-        alert("Title must be at least 3 characters");
-        return;
-      }
+  if (!image) {
+    alert("Image is required");
+    return;
+  }
+  if (!image.type.startsWith("image/")) {
+    alert("Only image files are allowed");
+    return;
+  }
 
-    
-      if (!start_date) {
-        alert("Start date is required");
-        return;
-      }
-      if (!end_date) {
-        alert("End date is required");
-        return;
-      }
-      if (new Date(end_date) < new Date(start_date)) {
-        alert("End date cannot be before start date");
-        return;
-      }
+  const formdata = new FormData();
+  formdata.append("image", image);
+  formdata.append("title", title);
+  formdata.append("start_date", start_date);
+  formdata.append("end_date", end_date);
+  formdata.append("start_time", convertTo12Hour(start_time));
+  formdata.append("end_time", convertTo12Hour(end_time));
+  formdata.append("price", price);
+  formdata.append("cate_nm", cate_nm);
+  formdata.append("cate_id", cate_id);
+  formdata.append("location", location);
+  formdata.append("description", description);
 
-    
-      if (!start_time) {
-        alert("Start time is required");
-        return;
-      }
-      if (!end_time) {
-        alert("End time is required");
-        return;
-      }
-      if (start_date === end_date && end_time <= start_time) {
-        alert("End time must be after start time");
-        return;
-      }
-      
-      if (!price) {
-        alert("Price is required");
-        return;
-      }
-      if (isNaN(price) || Number(price) < 0) {
-        alert("Price must be a valid positive number");
-        return;
-      }
+  try {
+    const res = await axios.post(`${API_URL}/api/v1/admin/addevent`, formdata, {
+      headers: {
+        "Content-Type": "multipart/form-data",
+      },
+    });
 
-    
-      if (!cate_id || !cate_nm) {
-        alert("Please select a category");
-        return;
-      }
+    alert("Event posted successfully!");
+    fetchData();
+    setCurrentPage(1);
 
-        
-      if (!location.trim()) {
-        alert("Location is required");
-        return;
-      }
+    setFile(null);
+    setTitle("");
+    setStartdate("");
+    setEnddate("");
+    setStarttime("");
+    setEndtime("");
+    setPrice("");
+    setCategory("");
+    setCategoryid("");
+    setLocation("");
+    setDescription("");
 
-      
-      if (!description.trim()) {
-        alert("Description is required");
-        return;
-      }
-      if (description.length < 10) {
-        alert("Description must be at least 10 characters");
-        return;
-      }
-    
-     
-      const formdata = new FormData();
-      formdata.append("image",image);
-      formdata.append("title",title);
-      formdata.append("start_date",start_date);
-      formdata.append("end_date",end_date);
-      formdata.append("start_time",convertTo12Hour(start_time));
-      formdata.append("end_time",convertTo12Hour(end_time));
-      formdata.append("price",price);
-      formdata.append("cate_nm",cate_nm);
-      formdata.append("cate_id",cate_id);
-      formdata.append("location",location);
-      formdata.append("description",description);
-    
-      //multiple images store
-  //     for (let i = 0; i < galleryImages.length; i++) {
-  //   formdata.append("galleryImages", galleryImages[i]);
-  // }
-      try {
-        
-        console.log('Sending data:');
-        for (let pair of   formdata.entries()) {
-          console.log(pair[0],pair[1]);
-        }
-
-      
-      // const res= await axios.post("http://localhost:5000/api/v1/admin/addevent", formdata,
-       const res= await axios.post(`${API_URL}/api/v1/admin/addevent`, formdata,
-          {
-            headers:{
-                "Content-Type":"multipart/form-data",
-              },
-          } );
-        alert("Event posted successfully!");
-        fetchData();
-
-        setFile(null);
-        setTitle("");
-        setStartdate("");
-        setEnddate("");
-        setStarttime("");
-        setEndtime("");
-        setPrice("");
-        setCategory("");
-        setCategoryid("");
-        setLocation("");
-        setDescription("");
-
-        //mutiple galleries
-        // setGalleryImages([]);
-        
-        console.log(res.data);
-      // navigate("/eventlist");
-
-
-
-      } catch (err) {
-        console.error('Full error:', err);
-      /* console.error('Response data:', err.response?.data);
-        console.error('Response status:', err.response?.status);*/
-        alert(`Error posting event: ${err.response?.data?.message || err.message}`);
-      }
-    }
+    console.log(res.data);
+  } catch (err) {
+    console.error(err);
+    alert(`Error posting event: ${err.response?.data?.message || err.message}`);
+  }
+};
 
     //helper function for image fetching on render
-   const getImageUrl = (image) => {
-  console.log("DB Image =", image);
-
-  if (!image) return "";
+  const getImageUrl = (image) => {
+  if (!image) return "/placeholder.jpg";
 
   if (image.startsWith("http://") || image.startsWith("https://")) {
-    console.log("Returned =", image);
     return image;
   }
 
-  const url = `${image.replace("/public", "")}`;
-  console.log("Returned =", url);
-  return url;
+  if (image.startsWith("/public")) {
+    return image.replace("/public", "");
+  }
+
+  return image;
 };
     
     const handleEdit=(item)=>{
@@ -317,58 +226,39 @@ import API_URL from "../../config/api";
         
     }
 
-    const handelUpdate=async(id)=>{
-        try{
-            const formdata=new FormData();
-            formdata.append("title",editTitle);
-            formdata.append("start_date",editStartDate);
-            formdata.append("end_date",editEndDate);
-            formdata.append("start_time",convertTo12Hour(editStartTime));
-            formdata.append("end_time",convertTo12Hour(editEndTime));
-            formdata.append("price",editPrice);
-            formdata.append("location",editLocation);
-            formdata.append("cate_nm",editCategory);
+    const handelUpdate = async (id) => {
+  try {
+    const formdata = new FormData();
+    formdata.append("title", editTitle);
+    formdata.append("start_date", editStartDate);
+    formdata.append("end_date", editEndDate);
+    formdata.append("start_time", convertTo12Hour(editStartTime));
+    formdata.append("end_time", convertTo12Hour(editEndTime));
+    formdata.append("price", editPrice);
+    formdata.append("location", editLocation);
+    formdata.append("cate_nm", editCategory);
 
-            if(editImage){
-              formdata.append("image",editImage);
-            }
+    if (editImage) {
+      formdata.append("image", editImage);
+    }
 
-          
+    const res = await axios.put(`${API_URL}/api/v1/admin/updateevent/${id}`, formdata, {
+      headers: {
+        "Content-Type": "multipart/form-data",
+      },
+    });
 
-  // if (editGalleryImages && editGalleryImages.length > 0) {
-  //   editGalleryImages.forEach((file) => {
-  //     formdata.append("galleryImages", file);
-  //   });
-  // }
-
-  for (let pair of formdata.entries()) {
-        console.log(pair[0], pair[1]);
-      }
-
-           // const res=await axios.put(`http://localhost:5000/api/v1/admin/updateevent/${id}`,formdata,
-            const res=await axios.put(`${API_URL}/api/v1/admin/updateevent/${id}`,formdata,
-            {
-              headers:{
-                "Content-Type":"multipart/form-data"
-              }
-            });
-            console.log(res.data);
-            alert("update successfully");
-            fetchData();
-            setEditId(null);
-            
-          }
-      catch(error){
+    console.log(res.data);
+    alert("Update successfully");
+    fetchData();
+    setCurrentPage(1);
+    setEditId(null);
+    setEditImage(null);
+  } catch (error) {
     console.log(error);
-    if(error.response)
-    {
-      console.log(error.response.data);
-       console.log(error.response.status);
-    }
-    
-    alert("update failed");
+    alert("Update failed");
   }
-    }
+};
   
       return(
           <>
@@ -413,7 +303,7 @@ import API_URL from "../../config/api";
             />
             <label>Start Date</label>
           <input 
-          type="text" 
+          type="date" 
           placeholder="Enter Start Date"
           onFocus={(e) => (e.target.type = "date")}
           name="start_date"
@@ -423,7 +313,7 @@ import API_URL from "../../config/api";
           />
           <label>End Date</label>
           <input 
-          type="text" 
+          type="date" 
           onFocus={(e)=>(e.target.type="date")}
           placeholder="Enter End Date"
           name="end_date" 
@@ -544,9 +434,11 @@ import API_URL from "../../config/api";
                         // <img src={`http://localhost:5000${c.image.replace("/public", "")}`} alt="event" height={50} />
                      <img
   src={getImageUrl(c.image)}
-  alt={c.title}
+  alt={c.title  || "event"}
   onLoad={() => console.log("Loaded:", getImageUrl(c.image))}
-  onError={(e) => console.log("Failed:",e.target.src)}
+  onError={(e) => {
+    e.currentTarget.src = "/placeholder.jpg";
+  }}
 />
 
                       )
