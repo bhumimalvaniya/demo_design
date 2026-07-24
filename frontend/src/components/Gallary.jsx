@@ -3,6 +3,7 @@
   import { useEffect,useState } from "react";
   import axios from "axios";
   import API_URL from "../config/api";
+  import { getImageUrl } from "../../../backend/Utils/Imagehelper.js";
 
 
   const Gallary=()=>{
@@ -76,7 +77,10 @@
     }}
                   >
               {img.image &&
-              (<img src={img.image}
+              (
+              <img 
+                // src={img.image}
+                src={getImageUrl(img.image)}
                 alt={img.photo_name}
                   onClick={() => setSelectedImage(img.image)}
                   className="gallery-img"
@@ -143,7 +147,8 @@
         </button>
 
         <img 
-          src={selectedImage}
+          // src={selectedImage}
+          src={getImageUrl(selectedImage)}
           alt="preview"
         />
 

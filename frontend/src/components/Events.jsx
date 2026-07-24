@@ -4,7 +4,8 @@
     import { useParams } from 'react-router-dom'
     import axios from 'axios'
     import API_URL from '../config/api'
-        
+    import { getImageUrl } from '../../../backend/Utils/Imagehelper.js'
+
     const Events = () => {
         const {categ}=useParams();
         const navigate=useNavigate();
@@ -58,7 +59,8 @@
 
         {/* IMAGE */}
         <img
-          src={evnt.image}
+          // src={evnt.image}
+           src={getImageUrl(evnt.image)}
           alt={evnt.title}
           onError={(e) => {
             e.target.src =

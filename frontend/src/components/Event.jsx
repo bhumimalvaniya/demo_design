@@ -10,6 +10,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import API_URL from '../config/api';
+import { getImageUrl } from '../../../backend/Utils/Imagehelper.js';
 
 const Event = () => {
   const navigate=useNavigate();
@@ -134,19 +135,7 @@ useEffect(() => {
 
 }, [categ]);
   
-//helper function set to the image in the  render
-const getImageUrl = (image) => {
-  if (!image) return "";
 
-  if (
-    image.startsWith("http://") ||
-    image.startsWith("https://")
-  ) {
-    return image;
-  }
-
-  return `${API_URL}/${image.replace("/public", "")}`;
-};
   return (
     <>
          <div className='mains'>

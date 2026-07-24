@@ -3,7 +3,7 @@ import './A_Addcategory.css'
 import axios from "axios";
 import { useState,useEffect } from "react";
 import API_URL from "../../config/api";
-
+import { getImageUrl } from "../../../../backend/Utils/Imagehelper.js";
 
 
 const A_Addcategory=()=>{
@@ -187,7 +187,8 @@ const A_Addcategory=()=>{
                                         />
                                       ):(
                                         // <img src={`http://localhost:5000${c.image}`} width="50" alt="category"/>
-                                        <img src={`${API_URL}${c.image}`} width="50" alt="category"/>
+                                        // <img src={`${API_URL}${c.image}`} width="50" alt="category"/>
+                                         <img src={getImageUrl(c.image)} width="50" alt="category"/>
                                       )}
                                     </td>
                                       

@@ -3,6 +3,7 @@ import "./A_Addevent.css";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import API_URL from "../../config/api";
+import { getImageUrl } from "../../../../backend/Utils/Imagehelper.js";
 
 const A_Addevent = () => {
   const [image, setFile] = useState(null);
@@ -91,13 +92,7 @@ const A_Addevent = () => {
     }
   };
 
-  const getImageUrl = (img) => {
-    if (!img) return "/placeholder.jpg";
-    if (img.startsWith("http://") || img.startsWith("https://")) return img;
-    if (img.startsWith("/public")) return img.replace("/public", "");
-    return `${API_URL}/${img.replace(/^\/+/, "")}`;
-  };
-
+  
   const handelsubmit = async (e) => {
     e.preventDefault();
 
