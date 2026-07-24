@@ -412,7 +412,12 @@ const A_Addevent = () => {
                     />
                   ) : (
                     <img
-                      src={getImageUrl(c.image)}
+                      // src={getImageUrl(c.image)}
+                      src={(() => {
+    const url = getImageUrl(c.image);
+    console.log("Image URL for", c.title, "=>", url);
+    return url;
+  })()}
                       alt={c.title || "event"}
                       height={50}
                       onError={(e) => {
