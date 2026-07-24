@@ -3,7 +3,7 @@ import React,{useEffect, useState} from "react";
 import './A_Addgalary.css';
 import axios from 'axios';
 import API_URL from "../../config/api";
-import { getImageUrl } from "../../../../backend/Utils/Imagehelper";
+import { getImageUrl } from "../../../../backend/Utils/Imagehelper.js";
 
 const A_Addgalary=()=>{
         const[updateId,setUpdateId]=useState(null);
