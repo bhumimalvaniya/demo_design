@@ -91,29 +91,12 @@ const A_Addevent = () => {
     }
   };
 
- const getImageUrl = (img) => {
-  if (!img) {
-    console.log("getImageUrl: No image, returning /placeholder.jpg");
-    return "/placeholder.jpg";
-  }
-  
-  console.log("getImageUrl input:", img);
-  
-  if (img.startsWith("http://") || img.startsWith("https://")) {
-    console.log("getImageUrl: Returning full URL as-is:", img);
-    return img;
-  }
-  
-  if (img.startsWith("/public")) {
-    const newUrl = img.replace("/public", "");
-    console.log("getImageUrl: /public case, returning:", newUrl);
-    return newUrl;
-  }
-  
-  const finalUrl = `${API_URL}/${img.replace(/^\/+/, "")}`;
-  console.log("getImageUrl: Final constructed URL:", finalUrl);
-  return finalUrl;
-};
+  const getImageUrl = (img) => {
+    if (!img) return "/placeholder.jpg";
+    if (img.startsWith("http://") || img.startsWith("https://")) return img;
+    if (img.startsWith("/public")) return img.replace("/public", "");
+    return `${API_URL}/${img.replace(/^\/+/, "")}`;
+  };
 
   const handelsubmit = async (e) => {
     e.preventDefault();

@@ -145,7 +145,7 @@ const getImageUrl = (image) => {
     return image;
   }
 
-  return `${API_URL}${image.replace("/public", "")}`;
+  return `${API_URL}/${image.replace("/public", "")}`;
 };
   return (
     <>
