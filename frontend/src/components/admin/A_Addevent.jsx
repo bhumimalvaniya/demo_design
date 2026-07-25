@@ -3,7 +3,7 @@ import "./A_Addevent.css";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import API_URL from "../../config/api";
-import { getImageUrl } from "../../../../backend/Utils/Imagehelper.js";
+import { getImageUrl } from "../../Utils/Imagehelper.js";
 
 const A_Addevent = () => {
   const [image, setFile] = useState(null);

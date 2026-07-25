@@ -5,6 +5,7 @@ import { useNavigate, useParams } from 'react-router-dom'
 import { useEffect,useState } from 'react'
 import axios from 'axios'
 import API_URL from '../config/api'
+import { getImageUrl } from '../Utils/Imagehelper.js'
 
 const Details = () => {
   const {id}=useParams();
@@ -242,19 +243,8 @@ setExpiredEvents(
     return <h2>No events found</h2>;
   }
 
-//helper for use in featch the image in render
-const getImageUrl = (image) => {
-  if (!image) return "";
 
-  if (
-    image.startsWith("http://") ||
-    image.startsWith("https://")
-  ) {
-    return image;
-  }
-
-  return `${API_URL}${image.replace("/public", "")}`;
-};
+  
   return (
     <>
      

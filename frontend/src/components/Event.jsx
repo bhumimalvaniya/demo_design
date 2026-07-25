@@ -10,7 +10,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import API_URL from '../config/api';
-import { getImageUrl } from '../../../backend/Utils/Imagehelper.js';
+import { getImageUrl } from '../Utils/Imagehelper.js';
 
 const Event = () => {
   const navigate=useNavigate();

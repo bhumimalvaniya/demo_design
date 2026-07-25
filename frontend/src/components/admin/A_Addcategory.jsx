@@ -3,7 +3,7 @@ import './A_Addcategory.css'
 import axios from "axios";
 import { useState,useEffect } from "react";
 import API_URL from "../../config/api";
-import { getImageUrl } from "../../../../backend/Utils/Imagehelper.js";
+import { getImageUrl } from "../../Utils/Imagehelper.js";
 
 
 const A_Addcategory=()=>{

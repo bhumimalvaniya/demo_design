@@ -3,7 +3,7 @@
   import { useEffect,useState } from "react";
   import axios from "axios";
   import API_URL from "../config/api";
-  import { getImageUrl } from "../../../backend/Utils/Imagehelper.js";
+  import { getImageUrl } from "../Utils/Imagehelper.js";
 
 
   const Gallary=()=>{

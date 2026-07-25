@@ -4,7 +4,7 @@
     import { useParams } from 'react-router-dom'
     import axios from 'axios'
     import API_URL from '../config/api'
-    import { getImageUrl } from '../../../backend/Utils/Imagehelper.js'
+    import { getImageUrl } from '../Utils/Imagehelper.js'
 
     const Events = () => {
         const {categ}=useParams();
