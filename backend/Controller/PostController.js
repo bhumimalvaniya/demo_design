@@ -1,11 +1,16 @@
 import gallary from "../Model/GallarySchema.js";
 
 import mongoose from "mongoose";
+import uploadOnCloudinary from "../Utils/cloudinary.js";
 
 export const uploadpost = async (req, res) => {
   try {
     const { photo_name } = req.body;
-    const image = req.file ? req.file.filename : null;
+    // const image = req.file ? req.file.filename : null;
+
+    const image = req.file
+    ? await uploadOnCloudinary(req.file.path)
+    : null;
 
     if (!photo_name || !image) {
       return res.status(400).json({
@@ -24,7 +29,8 @@ export const uploadpost = async (req, res) => {
 
     const newGallary = new gallary({
       photo_name,
-      image: `/public/uploads/${image}`
+      // image: `/public/uploads/${image}`
+      image: image.secure_url
     });
 
     await newGallary.save();
@@ -65,9 +71,17 @@ export const deletegallary=async(req,res)=>{
 export const updategallary = async (req, res) => {
     try {
         const { id } = req.params;
+       
         const { photo_name } = req.body;
-        const image = req.file ? `/public/uploads/${req.file.filename}` : null;
+      
+        // const image = req.file ? `/public/uploads/${req.file.filename}` : null;
 
+        let image = null;
+
+        if (req.file) {
+            const uploaded = await uploadOnCloudinary(req.file.path);
+             image = uploaded.secure_url;
+            }
         // validated id
         if (!mongoose.Types.ObjectId.isValid(id)) {
             return res.status(400).json({ message: "Invalid ID" });
