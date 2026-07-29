@@ -195,7 +195,8 @@ const A_Addgalary=()=>{
                                       ):(
                                         // <img src={`http://localhost:5000${c.image.replace("/public", "")}`} width="50" alt="gallary"/>
                                         //  <img src={`${API_URL}${c.image.replace("/public", "")}`} width="50" alt="gallary"/>
-                                          <img src={getImageUrl(c.image)} width="50" alt="gallary"/>
+                                          // <img src={getImageUrl(c.image)} width="50" alt="gallary"/>
+                                          <img src={c.image} width="50" alt="gallary"/>
                                       )}
                                     </td>
                                       
