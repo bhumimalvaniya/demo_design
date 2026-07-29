@@ -70,7 +70,10 @@ const A_Addgalary=()=>{
       const featchgallary=()=>{
         // axios.get('http://localhost:5000/api/v1/gallary/featch')
         axios.get(`${API_URL}/api/v1/gallary/featch`)
-                  .then(gallaries=>setGallaries(gallaries.data))
+                  .then((res) => {
+    console.log("Gallery Data:", res.data);
+    setGallaries(res.data);
+  })
                   .catch(err=>console.log(err))
       }
       useEffect(()=>{
