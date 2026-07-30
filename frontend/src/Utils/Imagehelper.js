@@ -3,11 +3,22 @@ import API_URL from "../config/api";
 export const getImageUrl = (image) => {
   if (!image) return "";
 
-  // If it's already a Cloudinary or other full URL, return it unchanged
-  if (image.startsWith("http://") || image.startsWith("https://")) {
+  // Remove extra spaces
+  image = image.trim();
+
+  // If it is already a complete URL (Cloudinary), return it directly
+  if (/^https?:\/\//i.test(image)) {
     return image;
   }
 
-  // Otherwise it's a local upload path
-  return `${API_URL}${image.replace("/public", "")}`;
+  // Fix old local upload paths
+  if (image.startsWith("/public/uploads/")) {
+    return `${API_URL}/uploads/${image.replace("/public/uploads/", "")}`;
+  }
+
+  if (image.startsWith("/uploads/")) {
+    return `${API_URL}${image}`;
+  }
+
+  return `${API_URL}/${image}`;
 };
