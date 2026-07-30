@@ -29,7 +29,8 @@
               : gallary.image
           }));
 
-          setImages(GallaryWithFixedImages);
+          // setImages(GallaryWithFixedImages);
+           setImages(GallaryWithFixedImages);
         } catch (error) {
           console.log("Error fetching events:", error);
         }
