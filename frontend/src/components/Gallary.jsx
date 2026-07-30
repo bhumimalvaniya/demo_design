@@ -18,8 +18,8 @@
             `${API_URL}/api/v1/gallary/featch`,
           );
 
-          console.log("Gallary Data:", res.data);
-
+          // console.log("Gallary Data:", res.data);
+            console.log("First Image:", res.data[0]?.image);
           // Fix image URLs
           const GallaryWithFixedImages = res.data.map(gallary => ({
             ...gallary,
