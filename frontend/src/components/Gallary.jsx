@@ -18,19 +18,19 @@
             `${API_URL}/api/v1/gallary/featch`,
           );
 
-          // console.log("Gallary Data:", res.data);
-            console.log("First Image:", res.data[0]?.image);
+           console.log("Gallary Data:", res.data);
+            // console.log("First Image:", res.data[0]?.image);
           // Fix image URLs
-          const GallaryWithFixedImages = res.data.map(gallary => ({
-            ...gallary,
-            image: gallary.image?.startsWith('/public/uploads/') 
-            // ? `http://localhost:5000/uploads/${gallary.image.replace('/public/uploads/', '')}` 
-            ? `${API_URL}/uploads/${gallary.image.replace('/public/uploads/', '')}` 
-              : gallary.image
-          }));
+        // const GallaryWithFixedImages = res.data.map(gallary => ({
+        //     ...gallary,
+        //     image: gallary.image?.startsWith('/public/uploads/') 
+        //     // ? `http://localhost:5000/uploads/${gallary.image.replace('/public/uploads/', '')}` 
+        //     ? `${API_URL}/uploads/${gallary.image.replace('/public/uploads/', '')}` 
+        //       : gallary.image
+        //   }));
 
           // setImages(GallaryWithFixedImages);
-           setImages(GallaryWithFixedImages);
+            setImages(res.data);
         } catch (error) {
           console.log("Error fetching events:", error);
         }
@@ -50,7 +50,7 @@
                       {
                         console.log(error);
                       }
-                  }
+                    }
 
                   
       return(
@@ -79,6 +79,7 @@
                   >
               {img.image &&
               (
+                
               <img 
                 // src={img.image}
                 src={getImageUrl(img.image)}
@@ -86,6 +87,7 @@
                   onClick={() => setSelectedImage(img.image)}
                   className="gallery-img"
                 onError={(e) => {
+                  console.log("Broken image:", img.image);
                     e.target.src = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='200'%3E%3Crect width='100%25' height='100%25' fill='%23f0f0f0'/%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dy='.3em' fill='%23999'%3ENo Image%3C/text%3E%3C/svg%3E";
                   }}
                   />
@@ -149,7 +151,7 @@
 
         <img 
           // src={selectedImage}
-          src={getImageUrl(selectedImage)}
+          src={selectedImage}
           alt="preview"
         />
 
