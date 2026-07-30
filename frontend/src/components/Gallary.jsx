@@ -21,16 +21,17 @@
            console.log("Gallary Data:", res.data);
             // console.log("First Image:", res.data[0]?.image);
           // Fix image URLs
-          const GallaryWithFixedImages = res.data.map(gallary => ({
-            ...gallary,
-            image: gallary.image?.startsWith('/public/uploads/') 
-            // ? `http://localhost:5000/uploads/${gallary.image.replace('/public/uploads/', '')}` 
-            ? `${API_URL}/uploads/${gallary.image.replace('/public/uploads/', '')}` 
-              : gallary.image
-          }));
+          // const GallaryWithFixedImages = res.data.map(gallary => ({
+          //   ...gallary,
+          //   image: gallary.image?.startsWith('/public/uploads/') 
+          //   // ? `http://localhost:5000/uploads/${gallary.image.replace('/public/uploads/', '')}` 
+          //   ? `${API_URL}/uploads/${gallary.image.replace('/public/uploads/', '')}` 
+          //     : gallary.image
+          // }));
 
-          // setImages(GallaryWithFixedImages);
-           setImages(GallaryWithFixedImages);
+          // // setImages(GallaryWithFixedImages);
+          //  setImages(GallaryWithFixedImages);
+          setImages(res.data);
         } catch (error) {
           console.log("Error fetching events:", error);
         }
