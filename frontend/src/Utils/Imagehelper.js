@@ -9,5 +9,5 @@ export const getImageUrl = (image) => {
   }
 
   // Otherwise it's a local upload path
-  return `${image.replace("/public", "")}`;
+  return `${API_URL}${image.replace("/public", "")}`;
 };
