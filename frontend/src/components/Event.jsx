@@ -321,7 +321,13 @@ navigate(`/events/${encodeURIComponent(info.cate_nm.toLowerCase())}`);
   }}
 /> */}
 {console.log("Image:", evnt.image)}
-<img src={getImageUrl(evnt.image)} alt={evnt.title} />
+<img src={getImageUrl(evnt.image)} alt={evnt.title}
+     onError={(e) => {
+    console.log("Raw image:", evnt.image);
+    console.log("Generated URL:", getImageUrl(evnt.image));
+    console.log("Browser tried:", e.target.src);
+  }}
+    />
                   <h1>{evnt.title}</h1>
                   
                   <p className="location">
