@@ -161,11 +161,13 @@ useEffect(() => {
     <img
      // src={`http://localhost:5000${info.image}`}
       // src={`${API_URL}${info.image}`}
-     src={getImageUrl(info.image)} 
+     src={info.image} 
       height="300px"
       width="100%"
       alt="category"
-
+       onError={(e) => {
+    console.log("Image failed:", e.target.src);
+  }}
       onClick={() => {
 
         const token = localStorage.getItem("token");
@@ -321,7 +323,7 @@ navigate(`/events/${encodeURIComponent(info.cate_nm.toLowerCase())}`);
   }}
 /> */}
 {console.log("Image:", evnt.image)}
-<img src={getImageUrl(evnt.image)} alt={evnt.title}
+<img src={evnt.image} alt={evnt.title}
      onError={(e) => {
     console.log("Raw image:", evnt.image);
     console.log("Generated URL:", getImageUrl(evnt.image));
