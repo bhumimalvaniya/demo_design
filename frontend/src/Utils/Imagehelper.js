@@ -20,5 +20,5 @@ export const getImageUrl = (image) => {
     return `${API_URL}${image}`;
   }
 
-  return `${API_URL}/${image}`;
+  // return `${API_URL}/${image}`;
 };
