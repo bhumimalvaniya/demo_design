@@ -13,11 +13,13 @@ export const getImageUrl = (image) => {
 
   // Fix old local upload paths
   if (image.startsWith("/public/uploads/")) {
-    return `${API_URL}/uploads/${image.replace("/public/uploads/", "")}`;
+    // return `${API_URL}/uploads/${image.replace("/public/uploads/", "")}`;
+     return `/uploads/${image.replace("/public/uploads/", "")}`;
   }
 
   if (image.startsWith("/uploads/")) {
-    return `${API_URL}${image}`;
+    // return `${API_URL}${image}`;
+    return `${image}`;
   }
 
   // return `${API_URL}/${image}`;
