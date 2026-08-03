@@ -283,7 +283,13 @@ export const changePassword = async (req, res) => {
 export const uplodcategory=async(req,res)=>{
     try{
             const{cate_nm}=req.body;
-            const image=req.file?req.file.filename:null;
+            // const image=req.file?req.file.filename:null;
+
+            const uploaded = req.file
+  ? await uploadOnCloudinary(req.file.path)
+  : null;
+
+const image = uploaded?.secure_url;
 
             if(!cate_nm || !image)
                 {
@@ -302,7 +308,8 @@ export const uplodcategory=async(req,res)=>{
         }
                 const newCategory=new category({
                     cate_nm,
-                    image:`/uploads/${image}`
+                    // image:`/uploads/${image}`
+                    image:image
                 });
 
                 await newCategory.save();
@@ -353,11 +360,16 @@ export const updateCategory = async (req, res) => {
         };
 
         // if new image uploaded
-        if (req.file) {
+        /*if (req.file) {
 
             updates.image = `/uploads/${req.file.filename}`;
 
-        }
+        }*/
+
+            if (req.file) {
+    const uploaded = await uploadOnCloudinary(req.file.path);
+    updates.image = uploaded.secure_url;
+}
 
         const updatedCategory =
             await category.findByIdAndUpdate(id,
