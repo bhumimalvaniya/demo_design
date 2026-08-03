@@ -320,6 +320,7 @@ navigate(`/events/${encodeURIComponent(info.cate_nm.toLowerCase())}`);
     console.log("Failed Image URL:", e.target.src);
   }}
 /> */}
+{console.log("Image:", evnt.image)}
 <img src={getImageUrl(evnt.image)} alt={evnt.title} />
                   <h1>{evnt.title}</h1>
                   
