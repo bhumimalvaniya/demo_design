@@ -93,12 +93,7 @@ const Home = () => {
 		<div class="slides">
 			<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQutlPQuO7CKo72rDehinjtK5WdwAVgfPtCbJC4jJLlNw&s=10" height="100" width="250" alt="" />
 		</div>
-		<div class="slides">
-			<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/6.png" height="100" width="250" alt="" />
-		</div>
-		<div class="slides">
-			<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/7.png" height="100" width="250" alt="" />
-		</div>
+	
 	</div>
 </div>
 </section>
