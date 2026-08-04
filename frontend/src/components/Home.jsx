@@ -67,7 +67,7 @@ const Home = () => {
 			<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR85oHj7GE_uT2nHtkL5ubdKmrcbBHjAX_D2e3K9bMxnQ&s=10" height="100" width="250" alt="" />
 		</div>
 		<div class="slides">
-			<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/4.png" height="100" width="250" alt="" />
+			<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS5w9Zu_EzWvaWEa_CCDNZyixCNE8B-2g8rGX15BvLh0w&s" height="100" width="250" alt="" />
 		</div>
 		<div class="slides">
 			<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/5.png" height="100" width="250" alt="" />
