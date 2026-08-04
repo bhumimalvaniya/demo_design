@@ -73,25 +73,25 @@ const Home = () => {
 			<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzfqqp27VywQJGi6ygFnryneGFzOYOiiSqAgpgfw0BKQ&s=10" height="100" width="250" alt="" />
 		</div>
 		<div class="slides">
-			<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/6.png" height="100" width="250" alt="" />
+			<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNr8bQJeXjY1R_qPwlPx1K5yeskYnzTacj5zVxuWJNFg&s" height="100" width="250" alt="" />
 		</div>
 		<div class="slides">
-			<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/7.png" height="100" width="250" alt="" />
+			<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgopDDrIZqohraBf5ZzTxkmx9xCTHTeUOYxdpVKzfl9Q&s=10" height="100" width="250" alt="" />
 		</div>
 		<div class="slides">
-			<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/1.png" height="100" width="250" alt="" />
+			<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGBiWzx1JF2VFpArpdt4CI4WIKv3udB9Zg7t3T_A0jJg&s=10" height="100" width="250" alt="" />
 		</div>
 		<div class="slides">
-			<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/2.png" height="100" width="250" alt="" />
+			<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3OOlkHUPerKvorR_8w9CdoIXCAMnjIi06VV-5nsvnOA&s=10" height="100" width="250" alt="" />
 		</div>
 		<div class="slides">
-			<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/3.png" height="100" width="250" alt="" />
+			<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSCrrW1z6ihHPJZ0Cb4MFRFRPi2O8FDusAUYJlIJnAhhQ&s=10" height="100" width="250" alt="" />
 		</div>
 		<div class="slides">
-			<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/4.png" height="100" width="250" alt="" />
+			<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVhp2ntAacJxHbx1F4BLhQy8CbZcknSH_8xVYvsrhKsw&s=10" height="100" width="250" alt="" />
 		</div>
 		<div class="slides">
-			<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/5.png" height="100" width="250" alt="" />
+			<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQutlPQuO7CKo72rDehinjtK5WdwAVgfPtCbJC4jJLlNw&s=10" height="100" width="250" alt="" />
 		</div>
 		<div class="slides">
 			<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/6.png" height="100" width="250" alt="" />
