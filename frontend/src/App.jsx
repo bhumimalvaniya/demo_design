@@ -36,6 +36,8 @@ import ProtectedAdminRoute from './components/admin/ProtectedAdminRoute'
 import A_Addaboutus from './components/admin/A_Addaboutus'
 import A_Addmenu from './components/admin/A_Addmenu'
 
+import AnalyticsTracker from './components/Analyticstracker'
+
 function AppContent() {
     const location = useLocation();
 
@@ -104,6 +106,7 @@ function AppContent() {
 function App() {
   return (
     <Router>
+      <AnalyticsTracker/>
       <AppContent />
     </Router>
   )
