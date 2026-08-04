@@ -22,7 +22,7 @@
         console.log("Events Data:", res.data);
 
         // Fix image URLs
-        const eventsWithFixedImages = res.data.map(event => ({
+       /* const eventsWithFixedImages = res.data.map(event => ({
           ...event,
           image: event.image?.startsWith('/public/uploads/') 
             //? `http://localhost:5000/uploads/${event.image.replace('/public/uploads/', '')}` 
@@ -30,7 +30,9 @@
             : event.image
         }));
 
-        setEvents(eventsWithFixedImages);
+        setEvents(eventsWithFixedImages);*/
+        setEvents(res.data);
+
       } catch (error) {
         console.log("Error fetching events:", error);
       }
