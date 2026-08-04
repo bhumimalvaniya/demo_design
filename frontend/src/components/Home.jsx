@@ -60,7 +60,8 @@ const Home = () => {
   <div class="slider">
 	<div class="slide-track">
 		<div class="slides">
-			<img src="https://cdn.freebiesupply.com/logos/thumbs/2x/mcdonalds-black-logo.png" height="100" width="250" alt="" />
+			{/* <img src="https://cdn.freebiesupply.com/logos/thumbs/2x/mcdonalds-black-logo.png" height="100" width="250" alt="" /> */}
+			<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSTEUimru0DK_4glpTX_hRbHbGMUjom5CXbgeZcqe-o_Q&s=10" height="100" width="250" alt="" />
 		</div>
 		<div class="slides">
 			<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/3.png" height="100" width="250" alt="" />
