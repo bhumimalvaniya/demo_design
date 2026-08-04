@@ -547,11 +547,12 @@ body {
 }
 
 .slider {
-	height: 200px;
+	height: 150px;
 	margin: auto;
 	overflow:hidden;
 	position: relative;
 	width: auto;
+  margin-top: 30px;
 	
 	.slide-track {
 		animation: scroll 40s linear infinite;
