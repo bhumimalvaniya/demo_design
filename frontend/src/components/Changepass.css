@@ -48,11 +48,28 @@
   text-decoration: none;
 }
 .change .ch1{
-    padding-top: 70px;
-    color: white;
+    font-size: 35px;
+  letter-spacing: 5px;
+   color: #a99898;
+    margin-bottom: 10px;
+    text-transform: uppercase;
     
 }
 
+.change span a{
+   display:inline-block;
+    margin-top:15px;
+    font-size:16px;
+    color:white;
+    text-decoration: none;
+}
+.change h1{
+   font-size: 25px;
+  color: #ff4D6D;
+  margin: 0;
+  font-weight: 700;
+  letter-spacing: 3px;
+}
 .yellow {
   color: #f4b400;
 }
