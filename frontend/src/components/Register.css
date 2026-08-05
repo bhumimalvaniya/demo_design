@@ -7,7 +7,7 @@ body {
 
 
 /* Form */
-.register {
+/* .register {
   display: flex;
   min-height: 85vh;
   justify-content: center;
@@ -95,4 +95,104 @@ text-align: left;
   text-decoration: none;
   color:rgb(110, 109, 109);
   text-align: left;
+} */
+
+.register {
+  min-height: 100vh;
+  width: 100%;
+  background: linear-gradient(
+      rgba(0, 0, 0, 0.65),
+      rgba(0, 0, 0, 0.65)
+    ),
+    url("https://images.unsplash.com/photo-1511578314322-379afb476865?w=1600");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+}
+
+.form-box {
+  width: 100%;
+  max-width: 450px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(12px);
+  border-radius: 20px;
+  padding: 40px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+  color: white;
+}
+
+.form-box h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: 32px;
+}
+
+.icon {
+  font-size: 50px;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.form-box input {
+  width: 100%;
+  height: 50px;
+  margin-top: 12px;
+  padding: 0 15px;
+  border: none;
+  border-radius: 10px;
+  outline: none;
+  font-size: 16px;
+}
+
+.radio1 {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 15px;
+  color: white;
+}
+
+.radio1 input[type="radio"] {
+  width: auto;
+  height: auto;
+}
+
+.error {
+  color: #ffb3b3;
+  font-size: 13px;
+}
+
+.form-box button {
+  width: 100%;
+  height: 50px;
+  margin-top: 20px;
+  border: none;
+  border-radius: 10px;
+  background: #ff6b00;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.form-box button:hover {
+  background: #e65c00;
+}
+
+.form-box p {
+  text-align: center;
+  margin-top: 20px;
+  color: white;
+}
+
+.form-box a {
+  color: #ffd700;
+  text-decoration: none;
+  font-weight: bold;
 }
