@@ -83,7 +83,7 @@ const Changepass=()=>{
     return(
        <div>
       {/* Top Banner Section */}
-        <div className='change'>
+        <div className='change1'>
         <div className='chpass'>
             <h3 className='ch1'>CHANGE PASSWORD</h3>
         <h1 style={{color:"yellow"}}>KEEP </h1><h1>IN TOUCH</h1>

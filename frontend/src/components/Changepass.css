@@ -1,5 +1,5 @@
 
-.change{
+.change1{
     
     height: 500px;
   background: 
@@ -18,7 +18,7 @@
   width: 100%;
   overflow: hidden;
 }
-.change::before {
+.change1::before {
   content: "";
   position: absolute;
   width: 100%;
@@ -27,7 +27,7 @@
   backdrop-filter: blur(1px);
 }
 
-.change .chpass{
+.change1 .chpass{
      position: relative;
   z-index: 2;
   color: white;
@@ -43,12 +43,12 @@
         transform: translateY(0);
     }
 }
-.change a{
+.change1 a{
   color: white;
   text-decoration: none;
 }
-.change .ch1{
-    font-size: 35px;
+.change1 .ch1{
+    font-size: 45px;
   letter-spacing: 5px;
    color: #a99898;
     margin-bottom: 10px;
@@ -56,18 +56,20 @@
     
 }
 
-.change span a{
+.change1 span a{
    display:inline-block;
-    margin-top:15px;
+    margin-top:20px;
     font-size:16px;
     color:white;
+      margin-bottom: 10px;
     text-decoration: none;
 }
-.change h1{
-   font-size: 25px;
+.change1 h1{
+   font-size: 30px;
   color: #ff4D6D;
   margin: 0;
   font-weight: 700;
+    margin-bottom: 10px;
   letter-spacing: 3px;
 }
 .yellow {
