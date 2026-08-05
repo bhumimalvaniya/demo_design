@@ -1,11 +1,27 @@
 
 .change{
-    background-image: url("images\image.png");
+    /* background-image: url("images\image.png");
     background-repeat: no-repeat;
     background-size: cover;
     height: 350px;
     text-align: center;
-    font-family:Arial, Helvetica, sans-serif;
+    font-family:Arial, Helvetica, sans-serif; */
+    height: 500px;
+  background: 
+  linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)),
+  /* url("E:\gtu\React\react js\react js\demo_design\frontend\src\components\images\2.jpg"); */
+   url("https://media.weddingz.in/images/dff99d50690cb7775f3905d431f3c071/outdoor-wedding-venues-in-ahmedabad-for-an-open-air-celebration.jpg"); 
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
 }
 .change .chpass{
      background: rgba(0, 0, 0, 0.6);
