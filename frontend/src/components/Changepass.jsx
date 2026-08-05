@@ -85,9 +85,9 @@ const Changepass=()=>{
       {/* Top Banner Section */}
         <div className='change'>
         <div className='chpass'>
-            <h3 className='ch1'>CONTECT US NOW</h3>
+            <h3 className='ch1'>CHANGE PASSWORD</h3>
         <h1 style={{color:"yellow"}}>KEEP </h1><h1>IN TOUCH</h1>
-        <h4 style={{color:"white"}}><a href='Home'>Home </a>       |       Contect us</h4>
+        <h4 style={{color:"white"}}><a href='Home'>Home </a>       |       CHANGE PASSWORD</h4>
     </div>
     </div> 
         <div className="form-container">
